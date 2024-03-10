@@ -9,22 +9,22 @@
                     <div class="panel-body p-2">
                         <form [formGroup]="loginForm" >
                             <div class="form-group pt-3">
-                                <div class="input-filed" [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required','username')" >
+                                <div class="input-filed" [class.error]="loginForm.controls['Email'].dirty && loginForm.hasError('required','Email')" >
                                     <span class="fa fa-user p-2"></span>
-                                    <input formControlName="username" type="text" placeholder="Username">
+                                    <input formControlName="Email" type="text" placeholder="Email">
                                 </div>
-                                <small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')"  class="text-danger">*username is required</small>
+                                <small *ngIf="loginForm.controls['Email'].dirty && loginForm.hasError('required','Email')"  class="text-danger">*Email is required</small>
                             </div>
                             <div class="form-group pt-3">
                                 <div class="input-filed" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" >
                                     <span class="fa fa-lock p-2"></span>
-                                    <input formControlName="password" [type]="type" placeholder="Password">
+                                    <input formControlName="password" [type]="type" placeholder="mot de passe ">
                                     <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
                                 </div>
                             </div>
-                            <small  *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')"   class="text-danger">*Password is required</small>
+                            <small  *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')"   class="text-danger">*mot de passe is required</small>
                             <div class="form-inline fr mt-4">
-                                <a id="forget" class="font-weight-bold">Forget Password?</a>
+                                <a id="forget" class="font-weight-bold">mot de passe oublié ?</a>
                             </div>
                             <button  (click)="onSubmit()"  type="submit" class="btn btn-primary btn-block mt-4 w-100 ">Login</button>
                             <div class="text-center pt-4 text-muted">Don't have account? <a id="forget" routerLink="/signup">Sign up </a> </div>
