@@ -12,6 +12,7 @@ import { LabelModule } from '@progress/kendo-angular-label';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -37,7 +38,10 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
     DropDownsModule,
     LabelModule,
     InputsModule,
+    HttpClientModule,
+    
     ButtonsModule
+    
 
 
   ],

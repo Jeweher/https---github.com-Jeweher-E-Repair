@@ -1,144 +1,78 @@
-<body>
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-heading text-center">
+                        <h3 class="pt-3 font-weight-bold">Sign In </h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
 
-    <div class="outer">
-        <div class="container">
-            <div class="row">
-                <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
-                    <div class="panel border bg-white">
-                        <div class="panel-heading text-center">
-                            <h3 class="pt-3 font-weight-bold">Sign Up</h3>
-                        </div>
-                        <div class="panel-body p-3">
-                            <form [formGroup]="signUpForm">
+                            <kendo-formfield>
+                                <kendo-label [for]="Nom" text="Nom"></kendo-label>
+                                <kendo-textbox formControlName="Nom" [clearButton]="true" #Nom required></kendo-textbox>
+
+                                <kendo-formerror>Erreur: Nom obligatoire</kendo-formerror>
+                            </kendo-formfield>
+
+
+                            <kendo-formfield>
+                                <kendo-label [for]="Prenom" text="Prénom"></kendo-label>
+                                <kendo-textbox formControlName="Prenom" [clearButton]="true" #Prenom
+                                    required></kendo-textbox>
+
+                                <kendo-formerror>Erreur: Prénom obligatoire</kendo-formerror>
+                            </kendo-formfield>
+
+                            <kendo-formfield>
+                                <kendo-label [for]="numberOfNights" text="Age"></kendo-label>
+                                <kendo-numerictextbox #numberOfNights formControlName="numberOfNights"
+                                    [min]="0"></kendo-numerictextbox>
+                                <kendo-formerror>Erreur: Age obligatoire </kendo-formerror>
+                            </kendo-formfield>
+
+
+
+                            <kendo-formfield>
                                 <div class="form-group pt-3">
-                                    <div class="input-filed" [class.error]="signUpForm.controls['Nom'].dirty && signUpForm.hasError('required','Nom')">
-                                        <span class="fa fa-user p-2"></span>
-                                        <input formControlName="Nom" type="text" placeholder="Nom" >
-                                    </div>
+                                    <span class="fa fa-lock p-2"></span>
+                                    <kendo-label [for]="password" text="Mot de passe"></kendo-label>
+                                    <kendo-textbox formControlName="MotDePasse" #password required [clearButton]="true"
+                                        [type]="passwordVisibility ? 'text' : 'password'">
+                                        <ng-template kendoTextBoxSuffixTemplate>
+                                            <button kendoButton look="clear" icon="eye"
+                                                (click)="toggleVisibility()"></button>
+                                        </ng-template>
+                                    </kendo-textbox>
+                                    <kendo-formhint>Votre Mot de passe</kendo-formhint>
+                                    <kendo-formerror
+                                        *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">Erreur:
+                                        Mot de passe </kendo-formerror>
                                 </div>
-                                <small *ngIf="signUpForm.controls['Nom'].dirty && signUpForm.hasError('required','Nom')" class ="text-danger">*Nom est obligatoire.</small>
-                                <div class="form-group pt-3">
-                                    <div class="input-filed" [class.error]="signUpForm.controls['Prénom'].dirty && signUpForm.hasError('required','Prénom')">
-                                        <span class="fa fa-user p-2"></span>
-                                        <input  formControlName="Prénom" type="text" placeholder="Prénom" required>
-                                    </div>
-                                </div>
-                                <small *ngIf="signUpForm.controls['Prénom'].dirty && signUpForm.hasError('required','Prénom')"  class ="text-danger">*Prénom est obligatoire.</small>
-                                <div class="form-group pt-3">
-                                    <label for="birthdate">Date de naissance</label>
-                                    <div class="input-filed" [class.error]="signUpForm.controls['birthdate'].dirty && signUpForm.hasError('required','birthdate')">
-                                        <span class="fa fa-calendar p-2"></span>
-                                        <input formControlName="birthdate" type="date" id="birthdate" name="birthdate" required>
-                                    </div>
-                                </div>
-                                <small *ngIf="signUpForm.controls['birthdate'].dirty && signUpForm.hasError('required','birthdate')" class ="text-danger">*Date de naissance est obligatoire.</small>
+                            </kendo-formfield>
+
+
+                            <kendo-label text="choisir votre Gouvernorat ">
+                                <kendo-dropdownlist [data]="data" [filterable]="true"
+                                    (valueChange)="valueChange($event)" (selectionChange)="selectionChange($event)"
+                                    (filterChange)="filterChange($event)">
+                                </kendo-dropdownlist>
+                            </kendo-label>
+
+                            <kendo-label text="choisir votre Déligation  ">
+                                <kendo-dropdownlist [data]="data" [filterable]="true"
+                                    (valueChange)="valueChange($event)" (selectionChange)="selectionChange($event)"
+                                    (filterChange)="filterChange($event)" (open)="open()" (opened)="opened()"
+                                    (close)="close()" (closed)="closed()" (focus)="focus()" (blur)="blur()">
+                                </kendo-dropdownlist>
+                            </kendo-label>
 
 
 
-
-
-
-
-
-                                <div class="form-group pt-3">
-                                    <div class="input-filed"  [class.error]="signUpForm.controls['Email'].dirty && signUpForm.hasError('required','Email')">
-                                        <span class="fa fa-envelope p-2"></span>
-                                        <input formControlName="Email" type="text" placeholder="Email">
-                                    </div>
-                                </div>
-                                <small *ngIf="signUpForm.controls['Email'].dirty && signUpForm.hasError('required','Email')" class ="text-danger">*Email es obligatoire.</small>
-
-                                <div class="form-group pt-3">
-                                    <div class="input-filed" [class.error]="signUpForm.controls['Password'].dirty && signUpForm.hasError('required','Password')">
-                                        <span class="fa fa-lock p-2"></span>
-                                        <input formControlName="Password" [type]="type" placeholder="Mot de passe">
-                                        <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
-                                    </div>
-                                </div>
-                                <small *ngIf="signUpForm.controls['Password'].dirty && signUpForm.hasError('required','Password')" class ="text-danger">*Mot de passe est obligatoire .</small>
-                                
-                                <div class="form-group pt-3">
-                                    <div class="input-filed" [class.error]="signUpForm.controls['Numérodetélépone'].dirty && signUpForm.hasError('required','Numérodetélépone')">
-                                        <span class="fa fa-phone p-2"></span>
-                                        <input formControlName="Numérodetélépone" type="text" placeholder="Numéro de télépone ">
-                                    </div>
-                                </div>
-                                <small *ngIf="signUpForm.controls['Numérodetélépone'].dirty && signUpForm.hasError('required','Numérodetélépone')" class ="text-danger">*Numéro de télépone est obligatoire.</small>
-
-
-                                <div class="food-demo card-container">
-                                    <h4 class="k-h5">Adresse</h4>
-                                    <div class="k-card custom-card">
-
-                                        <div class="card-row">
-
-                                            <div class="card-column">
-
-                                                <div class="component-container">
-                                                    <kendo-label text="Sélectionnez votre gouvernorat">
-                                                        <kendo-dropdownlist [data]="areaList"></kendo-dropdownlist>
-                                                    </kendo-label>
-                                                </div>
-                                                <div class="skeleton-container top">
-                                                    <div class="k-skeleton skeleton-box-small"></div>
-                                                    <div class="k-skeleton skeleton-box-large"></div>
-                                                </div>
-                                                <div class="skeleton-container bottom">
-                                                    <div class="k-skeleton skeleton-box-medium"></div>
-                                                    <div class="k-skeleton skeleton-box-medium"></div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="card-row">
-                                            <div class="k-skeleton skeleton-box-half"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
-                                <div class="food-demo card-container">
-                                    <div class="k-card custom-card">
-                                        <div class="card-row">
-                                            <div class="card-column">
-
-                                                <div class="component-container">
-                                                    <kendo-label text="Sélectionnez votre délégation">
-                                                        <kendo-dropdownlist [data]="areaList"></kendo-dropdownlist>
-                                                    </kendo-label>
-                                                </div>
-                                                <div class="skeleton-container top">
-                                                    <div class="k-skeleton skeleton-box-small"></div>
-                                                    <div class="k-skeleton skeleton-box-large"></div>
-                                                </div>
-                                                <div class="skeleton-container bottom">
-                                                    <div class="k-skeleton skeleton-box-medium"></div>
-                                                    <div class="k-skeleton skeleton-box-medium"></div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="card-row">
-                                            <div class="k-skeleton skeleton-box-half"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-                                <div class="form-group pt-3">
+                            <div class="form-group pt-3">
+                                <kendo-formfield>
                                     <label for="role">Choisissez votre rôle :</label>
                                     <div class="input-filed">
                                         <div class="form-check form-check-inline">
@@ -147,88 +81,72 @@
                                             <label class="form-check-label" for="clientRadio">Client</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="role" id="repairerRadio"
-                                                value="repairer" (change)="role = 'repairer'">
-                                            <label class="form-check-label" for="repairerRadio">Réparateur</label>
+                                            <input class="form-check-input" type="radio" name="role"
+                                                id="reparateurRadio" value="reparateur" (change)="role = 'reparateur'">
+                                            <label class="form-check-label" for="reparateurRadio">Réparateur</label>
                                         </div>
                                     </div>
+                                </kendo-formfield>
 
-                                    <div [ngSwitch]="role">
-                                        <div *ngSwitchCase="'client'">
-                                            <!-- Champs spécifiques au réparateur -->
-                                        </div>
-                                        <div *ngSwitchCase="'repairer'">
-                                            <div class="hobbies-demo card-container">
-                                                <div class="k-card custom-card">
-                                                    <div class="card-row">
-                                                        <div class="card-column no-flex">
-                                                            <div class="sidebar-container k-skeleton">
-                                                                <div class="avatar-name-container">
-                                                                    <div class="k-skeleton skeleton-avatar"></div>
-                                                                    <div class="name-container">
-                                                                        <div class="k-skeleton skeleton-text"></div>
-                                                                        <div
-                                                                            class="k-skeleton skeleton-small-text-short">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="description-container">
-                                                                    <div class="k-skeleton skeleton-small-text"></div>
-                                                                    <div class="k-skeleton skeleton-small-text"></div>
-                                                                    <div class="k-skeleton skeleton-small-text"></div>
-                                                                </div>
-                                                            </div>
+                                <div [ngSwitch]="role">
+                                    <div *ngSwitchCase="'client'">
+                                        <!-- Champs spécifiques au réparateur -->
+                                    </div>
+                                    <div *ngSwitchCase="'reparateur'">
+                                        <div class="hobbies-demo card-container">
+                                            <div class="k-card custom-card">
+                                                <div class="card-row">
+
+                                                    <div class="card-column">
+                                                        <div class="form-group"
+                                                            *ngIf="form.get('role')?.value === 'réparateur'">
+                                                            <kendo-formfield>
+                                                                <kendo-label for="competence">Vos
+                                                                    compétences</kendo-label>
+                                                                <kendo-multiselect [data]="listItems"
+                                                                    [(ngModel)]="value">
+                                                                </kendo-multiselect>
+                                                            </kendo-formfield>
                                                         </div>
-                                                        <div class="card-column">
-                                                            <div class="avatar-title-container">
-                                                                <div class="k-skeleton skeleton-avatar"></div>
-                                                                <h4 class="k-h5">Vos Compétances</h4>
-                                                            </div>
-                                                            <div class="component-container">
-                                                                <kendo-formfield showHints="always">
-                                                                    <kendo-label text="Ce que je peux travailler:">
-                                                                        <kendo-multiselect [data]="listItems"
-                                                                            [(ngModel)]="value"></kendo-multiselect>
-                                                                    </kendo-label>
-                                                                    <kendo-formhint>Ajoutez Vos Compétances, s'il n'est
-                                                                        pas dans la liste.</kendo-formhint>
-                                                                </kendo-formfield>
-                                                            </div>
-                                                            <div class="skeleton-container top">
-                                                                <div class="k-skeleton skeleton-box-small"></div>
-                                                                <div class="k-skeleton skeleton-box-large"></div>
-                                                            </div>
-                                                            <div class="skeleton-container bottom">
-                                                                <div class="k-skeleton skeleton-box-small"></div>
-                                                                <div class="k-skeleton skeleton-box-large-double"></div>
-                                                            </div>
+                                                        <div class="component-container">
+                                                            <kendo-formfield showHints="always">
+                                                                <kendo-label text="Ce que je peux travailler:">
+                                                                    <kendo-multiselect [data]="listItems"
+                                                                        [(ngModel)]="value"></kendo-multiselect>
+                                                                </kendo-label>
+                                                                <kendo-formhint>Ajoutez Vos Compétances, s'il n'est
+                                                                    pas dans la liste.</kendo-formhint>
+                                                            </kendo-formfield>
                                                         </div>
+
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
 
-                                            <div>
-                                                <label for="phone2">Deuxième numéro de téléphone :</label>
-                                                <input type="tel" id="phone2" name="phone2" />
-                                            </div>
+                                        <div>
+                                            <label for="phone2">Deuxième numéro de téléphone :</label>
+                                            <input type="tel" id="phone2" name="phone2" />
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </form>
+                        <div class="panel-body p-3">
+                            <div class="k-form-buttons">
+                                <button kendoButton class="blue-button" (click)="submitForm()">Sign In </button>
 
+                            </div>
+                            <div class="text-center pt-4 text-muted">Already have account? <a id="forget"
+                                    routerLink="/login">Login</a>
+                            </div>
 
-
-
-
-
-                                <button type="submit" class="btn btn-primary btn-block mt-4 w-100 " (click)="onSignUp()">Sign Up</button>
-                                <div class="text-center pt-4 text-muted">Already have account? <a id="forget"
-                                        routerLink="/login">Login</a> </div>
-                            </form>
                         </div>
+
 
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</body>
+</div>

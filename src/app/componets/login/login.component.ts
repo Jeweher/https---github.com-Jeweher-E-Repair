@@ -1,68 +1,87 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { fontGrowIcon } from '@progress/kendo-svg-icons';
+import { TextBoxComponent } from '@progress/kendo-angular-inputs';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  
 })
 export class LoginComponent implements OnInit {
+  @ViewChild('password')
+   public textbox!: TextBoxComponent;
+  
 
 
-  type: string = "password";
-  isText: boolean = false;
-  eyeIcon: string = "fa-eye-slash";
-  loginForm!: FormGroup;
-  constructor(private fb: FormBuilder) {}
-
-
-
-
-  ngOnInit(): void {
-    this.loginForm = this.fb.group({
-      Email: ['', Validators.required],
-      password: ['', Validators.required],
-    })
+  constructor( private auth : AuthService){
+   
 
   }
-
-
-  hideShowPass() {
-    this.isText = !this.isText;
-    this.isText ? this.eyeIcon = "fa-eye" : this.eyeIcon = "fa-eye-slash";
-    this.isText ? this.type = "text" : this.type = "password";
-
-
-  }
-
-  onSubmit() {
-    if (this.loginForm.valid) {
-      console.log(this.loginForm.value)
-      //send the obj to database
-    } else {
-
-      //throw the error using toaster and with required fileds
-
-      this.validateAllFormFileds(this.loginForm);
-      alert("Votre formulaire n'est pas valide")
-    }
-
-  }
-
-
-  private validateAllFormFileds(formGroup: FormGroup) {
-    Object.keys(formGroup.controls).forEach(field => {
-      const control = formGroup.get(field);
-      if (control instanceof FormControl) {
-        control.markAsDirty({ onlySelf: true });
-      } else if (control instanceof FormGroup) {
-        this.validateAllFormFileds(control);
-      }
-    });
-
-
-  }
+  public ngAfterViewInit(): void {
+    this.textbox.input.nativeElement.type = 'password';
 }
+
+public toggleVisibility(): void {
+    const inputEl = this.textbox.input.nativeElement;
+    inputEl.type = inputEl.type === 'password' ? 'text' : 'password';
+}
+
+  
+  
+  public form: FormGroup = new FormGroup({
+    
+    password: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    
+});  
+
+// hasError(controlName: string, errorName: string): boolean {
+//   const control = this.form.get(controlName);
+//   return control?.dirty && control.errors && control.errors[errorName];
+// }
+
+
+
+
+
+// public submitForm(): void {
+//     this.form.markAllAsTouched();
+// }
+submitForm(){
+
+  if (this.form.valid) {
+    console.log('Form Submitted', this.form.value);
+    // Add your logic here to handle the form submission
+  } else {
+    console.log('Form Invalid');
+  }
+
+  this.auth.login(this.form.value)
+  .subscribe({
+    next:(res)=>{
+      // alert(res.message)
+    },
+    error:(err)=>{
+      // alert(err?.error.message)
+    }
+  })
+
+  this.form.markAllAsTouched();
+}
+
+public clearForm(): void {
+    this.form.reset();
+}
+  ngOnInit(): void {
+    
+  }
+
+  
+}
+
+  
+
 
 

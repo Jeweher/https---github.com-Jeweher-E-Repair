@@ -24,7 +24,7 @@
     "@progress/kendo-angular-dialog": "^15.1.0",
     "@progress/kendo-angular-dropdowns": "^15.1.0",
     "@progress/kendo-angular-icons": "15.1.0",
-    "@progress/kendo-angular-inputs": "15.1.0",
+    "@progress/kendo-angular-inputs": "^15.1.0",
     "@progress/kendo-angular-intl": "15.1.0",
     "@progress/kendo-angular-l10n": "15.1.0",
     "@progress/kendo-angular-label": "15.1.0",
