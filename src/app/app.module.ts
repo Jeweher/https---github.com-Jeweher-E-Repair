@@ -13,13 +13,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './componets/Home/home/home.component';
+import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     InputsModule,
     HttpClientModule,
     
-    ButtonsModule
+    ButtonsModule,
+    ScrollViewModule
     
 
 

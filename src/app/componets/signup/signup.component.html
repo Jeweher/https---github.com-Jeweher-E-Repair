@@ -1,152 +1,194 @@
 <div class="outer">
     <div class="container">
         <div class="row">
+            <div class="row justify-content-end">
             <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
                 <div class="panel border bg-white">
                     <div class="panel-heading text-center">
-                        <h3 class="pt-3 font-weight-bold">Sign In </h3>
+                        <h3 class="pt-3 font-weight-bold">S'inscrire </h3>
                     </div>
                     <div class="panel-body p-3">
-                        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <form class="k-form k-form-md" [formGroup]="form">
+                            <fieldset class="k-form-fieldset">
+                                <legend class="k-form-legend">Créer un Compte</legend>
 
 
-                            <kendo-formfield>
-                                <kendo-label [for]="Nom" text="Nom"></kendo-label>
-                                <kendo-textbox formControlName="Nom" [clearButton]="true" #Nom required></kendo-textbox>
+                                <kendo-formfield>
+                                    <kendo-label [for]="Nom" text="Nom"></kendo-label>
+                                    <kendo-textbox formControlName="Nom" [clearButton]="true" #Nom
+                                        required></kendo-textbox>
 
-                                <kendo-formerror>Erreur: Nom obligatoire</kendo-formerror>
-                            </kendo-formfield>
+                                    <kendo-formerror>Erreur : Nom obligatoire</kendo-formerror>
+                                </kendo-formfield>
+
+                                <kendo-formfield>
+                                    <kendo-label [for]="Prenom" text="Prénom"></kendo-label>
+                                    <kendo-textbox formControlName="Prenom" [clearButton]="true" #Prenom
+                                        required></kendo-textbox>
+                                    <kendo-formerror>Erreur : Prénom obligatoire</kendo-formerror>
+                                </kendo-formfield>
+                                <kendo-formfield>
+                                    <kendo-label [for]="Age" text="Age"></kendo-label>
+                                    <kendo-textbox formControlName="Age" [clearButton]="true" #Age
+                                        required></kendo-textbox>
+
+                                    <kendo-formerror>Erreur : Age obligatoire</kendo-formerror>
+
+                                </kendo-formfield>
 
 
-                            <kendo-formfield>
-                                <kendo-label [for]="Prenom" text="Prénom"></kendo-label>
-                                <kendo-textbox formControlName="Prenom" [clearButton]="true" #Prenom
-                                    required></kendo-textbox>
+                                <kendo-formfield>
 
-                                <kendo-formerror>Erreur: Prénom obligatoire</kendo-formerror>
-                            </kendo-formfield>
+                                    <kendo-label [for]="phone" text="Numéro de téléphone"></kendo-label>
+                                    <kendo-textbox formControlName="phone" [clearButton]="true" #phone></kendo-textbox>
 
-                            <kendo-formfield>
-                                <kendo-label [for]="numberOfNights" text="Age"></kendo-label>
-                                <kendo-numerictextbox #numberOfNights formControlName="numberOfNights"
-                                    [min]="0"></kendo-numerictextbox>
-                                <kendo-formerror>Erreur: Age obligatoire </kendo-formerror>
-                            </kendo-formfield>
+                                    <kendo-formerror> Erreur : Le numéro de téléphone doit être de 8
+                                        chiffres</kendo-formerror>
+                                </kendo-formfield>
 
 
 
-                            <kendo-formfield>
-                                <div class="form-group pt-3">
-                                    <span class="fa fa-lock p-2"></span>
-                                    <kendo-label [for]="password" text="Mot de passe"></kendo-label>
-                                    <kendo-textbox formControlName="MotDePasse" #password required [clearButton]="true"
-                                        [type]="passwordVisibility ? 'text' : 'password'">
+                                <kendo-formfield>
+                                    <kendo-label [for]="email" text="Email"></kendo-label>
+                                    <kendo-textbox formControlName="email" [clearButton]="true" #email></kendo-textbox>
+
+                                    <kendo-formerror>Erreur : Email obligatoire </kendo-formerror>
+
+
+
+                                </kendo-formfield>
+
+                                <kendo-formfield>
+                                    <kendo-label [for]="password" text="Mot De Passe"> </kendo-label>
+                                    <kendo-textbox formControlName="password" #password required [clearButton]="true">
                                         <ng-template kendoTextBoxSuffixTemplate>
                                             <button kendoButton look="clear" icon="eye"
                                                 (click)="toggleVisibility()"></button>
                                         </ng-template>
                                     </kendo-textbox>
-                                    <kendo-formhint>Votre Mot de passe</kendo-formhint>
-                                    <kendo-formerror
-                                        *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">Erreur:
-                                        Mot de passe </kendo-formerror>
-                                </div>
-                            </kendo-formfield>
 
 
-                            <kendo-label text="choisir votre Gouvernorat ">
-                                <kendo-dropdownlist [data]="data" [filterable]="true"
-                                    (valueChange)="valueChange($event)" (selectionChange)="selectionChange($event)"
-                                    (filterChange)="filterChange($event)">
-                                </kendo-dropdownlist>
-                            </kendo-label>
-
-                            <kendo-label text="choisir votre Déligation  ">
-                                <kendo-dropdownlist [data]="data" [filterable]="true"
-                                    (valueChange)="valueChange($event)" (selectionChange)="selectionChange($event)"
-                                    (filterChange)="filterChange($event)" (open)="open()" (opened)="opened()"
-                                    (close)="close()" (closed)="closed()" (focus)="focus()" (blur)="blur()">
-                                </kendo-dropdownlist>
-                            </kendo-label>
-
-
-
-                            <div class="form-group pt-3">
-                                <kendo-formfield>
-                                    <label for="role">Choisissez votre rôle :</label>
-                                    <div class="input-filed">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="role" id="clientRadio"
-                                                value="client" (change)="role = 'client'">
-                                            <label class="form-check-label" for="clientRadio">Client</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="role"
-                                                id="reparateurRadio" value="reparateur" (change)="role = 'reparateur'">
-                                            <label class="form-check-label" for="reparateurRadio">Réparateur</label>
-                                        </div>
-                                    </div>
+                                    <kendo-formerror>Erreur : un mot de passe obligatoire </kendo-formerror>
                                 </kendo-formfield>
 
-                                <div [ngSwitch]="role">
-                                    <div *ngSwitchCase="'client'">
-                                        <!-- Champs spécifiques au réparateur -->
+                                <div class="form-group pt-4">
+
+                                    <kendo-label text="Choisir Votre Gouvernorat"></kendo-label>
+                                    <kendo-dropdownlist formControlName="selectedItem1"  [data]="governorates"
+                                    [textField]="'name'"
+                                    [valueField]="'id'"
+                          
+                                   
+                                         [filterable]="true"
+                                        (valueChange)="onGovernorateChange($event)"> 
+                                    </kendo-dropdownlist>
+
+                                </div>
+
+
+                                <div class="form-group pt-4">
+                                    <kendo-label text="Choisir Votre Délegation"></kendo-label>
+                                    <kendo-dropdownlist [data]="filteredDelegations"
+                                    [textField]="'name'"
+                                    [valueField]="'id'"
+                          
+                                        formControlName="selectedItem2"  [filterable]="true"
+                                        (valueChange)="onDelegationChange($event)"
+                              >
+                                        
+                                    </kendo-dropdownlist>
+                                </div>
+
+
+
+
+                                <div class="form-group pt-1">
+                                    <div class="form-group-role">
+                                        <label for="role">Choisissez votre rôle :</label>
                                     </div>
-                                    <div *ngSwitchCase="'reparateur'">
-                                        <div class="hobbies-demo card-container">
-                                            <div class="k-card custom-card">
-                                                <div class="card-row">
-
-                                                    <div class="card-column">
-                                                        <div class="form-group"
-                                                            *ngIf="form.get('role')?.value === 'réparateur'">
-                                                            <kendo-formfield>
-                                                                <kendo-label for="competence">Vos
-                                                                    compétences</kendo-label>
-                                                                <kendo-multiselect [data]="listItems"
-                                                                    [(ngModel)]="value">
-                                                                </kendo-multiselect>
-                                                            </kendo-formfield>
-                                                        </div>
-                                                        <div class="component-container">
-                                                            <kendo-formfield showHints="always">
-                                                                <kendo-label text="Ce que je peux travailler:">
-                                                                    <kendo-multiselect [data]="listItems"
-                                                                        [(ngModel)]="value"></kendo-multiselect>
-                                                                </kendo-label>
-                                                                <kendo-formhint>Ajoutez Vos Compétances, s'il n'est
-                                                                    pas dans la liste.</kendo-formhint>
-                                                            </kendo-formfield>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    <div class="form-group pt-1 radio-group">
+                                        <div class="form-group pt-1">
+                                            <kendo-label [for]="client" text="Client"></kendo-label>
+                                            <input type="radio" required value="client" formControlName="role" #client
+                                                kendoRadioButton />
                                         </div>
-
-                                        <div>
-                                            <label for="phone2">Deuxième numéro de téléphone :</label>
-                                            <input type="tel" id="phone2" name="phone2" />
-                                        </div>
+                                        <kendo-label [for]="reparateur" text="Réparateur"></kendo-label>
+                                        <input type="radio" value="reparateur" formControlName="role" #reparateur
+                                            kendoRadioButton />
                                     </div>
                                 </div>
-                            </div>
+
+                                <!-- Display the following fields when the user selects "client" -->
+                                <div class="form-group pt-1" *ngIf="client.checked">
+                                    <kendo-formfield>
+                                        <kendo-label [for]="clientAddress" text="Numéro de maison"></kendo-label>
+                                        <kendo-textbox #clientAddress formControlName="clientAddress"
+                                            [clearButton]="true" required></kendo-textbox>
+                                        <kendo-formerror>Erreur: Numéro de maison</kendo-formerror>
+                                    </kendo-formfield>
+                                </div>
+
+                                <div class="form-group pt-1" *ngIf="client.checked">
+                                    <kendo-formfield>
+                                        <kendo-label [for]="clientStreet" text="Numéro de rue"></kendo-label>
+                                        <kendo-textbox #clientStreet formControlName="clientStreet" [clearButton]="true"
+                                            required></kendo-textbox>
+                                        <kendo-formerror>Erreur: Numéro de rue obligatoire</kendo-formerror>
+                                    </kendo-formfield>
+                                </div>
+
+                                <!-- Display the following fields when the user selects "reparateur" -->
+                                <div class="form-group pt-1" *ngIf="reparateur.checked">
+                                    <kendo-formfield>
+                                        <kendo-label [for]="secondPhoneNumber"
+                                            text="Deuxième numéro de téléphone"></kendo-label>
+                                        <kendo-textbox #secondPhoneNumber formControlName="secondPhoneNumber"
+                                            [clearButton]="true" required></kendo-textbox>
+                                        <kendo-formerror>Erreur : Deuxième numéro de téléphone
+                                            obligatoire</kendo-formerror>
+                                    </kendo-formfield>
+                                </div>
+
+                                <div class="form-group pt-1" *ngIf="reparateur.checked">
+                                    <kendo-formfield>
+                                      <kendo-label [for]="CompList" text="Choisir votre Compétences"></kendo-label>
+                                      <kendo-multiselect
+                                        formControlName="competence"
+                                        [data]="CompList"
+                                        string="id"
+                                        string="nom"
+                                        [valuePrimitive]="true"
+                                      ></kendo-multiselect>
+                                      <kendo-formerror>Erreur : compétence obligatoire</kendo-formerror>
+                                    </kendo-formfield>
+                                  </div>
+
+
+                                <div class="form-group pt-4">
+                                    <div class="k-form-buttons k-buttons-end">
+                                        <button kendoButton class="my-custom-button" (click)="submitForm()">se
+                                            connecter</button>
+                                        <button kendoButton class="my-custom-button"
+                                            (click)="clearForm()">Effacer</button>
+                                    </div>
+                                    <div class="form-group pt-4">
+                                        <div class="text-center pt-1 text-muted">Vous avez déjà un compte ? <a
+                                                id="forget" routerLink="/login">Se Connecter </a> </div>
+                                    </div>
+                                </div>
+
+
+
+
+                            </fieldset>
                         </form>
-                        <div class="panel-body p-3">
-                            <div class="k-form-buttons">
-                                <button kendoButton class="blue-button" (click)="submitForm()">Sign In </button>
 
-                            </div>
-                            <div class="text-center pt-4 text-muted">Already have account? <a id="forget"
-                                    routerLink="/login">Login</a>
-                            </div>
-
-                        </div>
 
 
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </div>

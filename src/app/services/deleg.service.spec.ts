@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DelegService } from './deleg.service';
+import { delegService } from './deleg.service';
 
 describe('DelegService', () => {
-  let service: DelegService;
+  let service: delegService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DelegService);
+    service = TestBed.inject(delegService);
   });
 
   it('should be created', () => {

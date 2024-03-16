@@ -1,21 +1,29 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { DelegationModel } from '../models/delegation-model';
+import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class DelegService {
-  private baseUrl: string="https://localhost:7261/api/Delegation/"
+@Injectable({ providedIn: 'root' })
+export class delegService {
+    Url=environment.apiUrl;
+    constructor(
+        private router: Router,
+        private _http: HttpClient
 
-  constructor(private http : HttpClient) {
+    ) {}
 
-
-   }
-
-   GetDelegByGouvId(GouvId:string ){
-
-    return this .http.get(this.baseUrl + "Delegation/" +GouvId)
+    protected prepareHeader(): Object {
+      let headers = new HttpHeaders();
+       headers = headers.set('Accept', 'application/json');
+       return { headers: headers }; }
     
-   }
+    
+       GetDelegationByGouvID(GouvenoratId: string) {
+        return this._http.get<any>(`${this.Url}/api/delegation/ ${GouvenoratId}`, this.prepareHeader()).pipe(
+          map(res => res as any)
+        );
+}
 
 }

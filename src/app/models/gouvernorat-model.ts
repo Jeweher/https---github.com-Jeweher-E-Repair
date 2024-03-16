@@ -1,5 +1,5 @@
 export class GouvernoratModel {
-    Id!:string;
-    Nom!:string;
-    Code?:string;
+    Id:string="";
+    Nom:string="";
+    Code:string="";
 }
