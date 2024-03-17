@@ -27,8 +27,8 @@ export class SignupComponent implements OnInit {
   public CompList: Array<{ id: string; nom: string }> = [];
   title = 'dropdownlist-tutorial';
   public isRequired = true;
-  public governorates:GouvernoratModel[] = [];
-  public delegations:DelegationModel [] = [];
+  public governorates: GouvernoratModel[] = [];
+  public delegations: DelegationModel[] = [];
 
   public selectedGovernorate: string | null = null;
   public filteredDelegations: DelegationModel[] = [];
@@ -43,8 +43,8 @@ export class SignupComponent implements OnInit {
     const delegation = this.delegations.find((d) => d.gouvId === value);
     if (delegation) {
       this.selectedGovernorate = delegation.gouvId;
-}
-}
+    }
+  }
 
 
 
@@ -54,10 +54,10 @@ export class SignupComponent implements OnInit {
     private delegService: delegService,
     private compeService: CompeService,
     private router: Router,
-    private GouvService: GouvService ) { }
-  ngOnInit(): void {}
-  
- 
+    private GouvService: GouvService) { }
+  ngOnInit(): void { }
+
+
   public ngAfterViewInit(): void {
     this.textbox.input.nativeElement.type = 'password';
   }
@@ -67,7 +67,7 @@ export class SignupComponent implements OnInit {
     inputEl.type = inputEl.type === 'password' ? 'text' : 'password';
   }
 
- public form: FormGroup = new FormGroup({
+  public form: FormGroup = new FormGroup({
     Nom: new FormControl(),
     Prenom: new FormControl(),
     Age: new FormControl(null, [Validators.required, Validators.min(16), Validators.max(100)]),

@@ -15,6 +15,13 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './componets/Home/home/home.component';
 import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
+import { SideNavComponent } from './componets/Dashboards/side-nav/side-nav/side-nav.component';
+import { AccueilComponent } from './componets/accueil/accueil.component';
+import { ReclamationComponent } from './componets/reclamation/reclamation.component';
+import { DossiersComponent } from './componets/dossiers/dossiers.component';
+import { CalendrierComponent } from './componets/calendrier/calendrier.component';
+import { StatistiquesComponent } from './componets/statistiques/statistiques.component';
+
 
 
 @NgModule({
@@ -22,7 +29,15 @@ import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
     AppComponent,
     LoginComponent,
     SignupComponent,
-    HomeComponent
+    HomeComponent,
+    SideNavComponent,
+    AccueilComponent,
+    ReclamationComponent,
+    DossiersComponent,
+    CalendrierComponent,
+    StatistiquesComponent,
+ 
+    
   ],
   imports: [
     BrowserModule,
@@ -44,7 +59,8 @@ import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
     HttpClientModule,
     
     ButtonsModule,
-    ScrollViewModule
+    ScrollViewModule,
+   
     
 
 
