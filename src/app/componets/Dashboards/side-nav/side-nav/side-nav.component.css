@@ -112,3 +112,7 @@ img{
     margin-bottom: 3px;
 }
 
+.btn-close .fa-times {
+    color: white;
+  }
+   

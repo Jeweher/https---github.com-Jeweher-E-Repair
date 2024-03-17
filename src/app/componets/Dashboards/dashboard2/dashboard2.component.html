@@ -1,0 +1,12 @@
+<app-side-nav (onToggleSideNav)="onToggleSideNav($event)"></app-side-nav>
+<app-navbar [ngStyle]="{  width : isSideNavCollapsed ==false ? ' calc(100% - 5rem)' :'  calc(100% - 16.5625rem)',left: isSideNavCollapsed ==false ? ' 5rem' :' 16.5625rem' }"></app-navbar>
+  <div class="body" [ngClass]="getBodyClass()" >
+    <router-outlet>
+      <button kendoButton *ngIf="!opened" (click)="open()">Fenetre</button>
+
+    <kendo-window title="My Window" *ngIf="opened" (close)="close()">
+      <p style="margin: 30px; text-align: center;">The window was opened.</p>
+    </kendo-window>
+ 
+    </router-outlet>
+</div>

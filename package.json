@@ -23,7 +23,7 @@
     "@progress/kendo-angular-buttons": "^15.1.0",
     "@progress/kendo-angular-common": "15.1.0",
     "@progress/kendo-angular-dialog": "^15.1.0",
-    "@progress/kendo-angular-dropdowns": "^15.1.0",
+    "@progress/kendo-angular-dropdowns": "^15.2.0",
     "@progress/kendo-angular-icons": "15.1.0",
     "@progress/kendo-angular-inputs": "15.1.0",
     "@progress/kendo-angular-intl": "15.1.0",
@@ -38,6 +38,7 @@
     "@progress/kendo-svg-icons": "^2.0.0",
     "@progress/kendo-theme-default": "^7.2.0",
     "rxjs": "~7.8.0",
+    "sweetalert2": "^11.10.6",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },

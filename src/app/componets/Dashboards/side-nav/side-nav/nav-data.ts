@@ -1,34 +1,34 @@
 export const navbarData =[
     {
         routeLink : 'accueil ',
-        icon : 'k-icon k-i-home',
+        icon : 'fa fa-home',
         label :'accueil ',
         // role:'T'
     },
     {
         routeLink : 'calendrier',
-        icon : 'k-icon k-i-calendar',
+        icon : 'fa fa-calendar',
         label :'calendrier',
         // role:'C'
 
     },
     {
         routeLink : 'dossiers',
-        icon : 'k-icon k-i-folder-open',
+        icon : 'fa fa-folder-open',
         label :'Dossiers',
         // role:'T'
 
     },
     {
         routeLink : 'reclamation',
-        icon : 'k-icon k-i-megaphone',
+        icon : 'fa fa-bullhorn',
         label :'reclamation',
         // role:'T'
 
     },
     {
         routeLink : 'Statistiques',
-        icon : 'k-icon k-i-chart-line',
+        icon : ' fa fa-line-chart',
         label :'Statistiques',
         // role:'T'
 

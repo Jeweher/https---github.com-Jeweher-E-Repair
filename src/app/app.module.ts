@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule ,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,10 +21,16 @@ import { ReclamationComponent } from './componets/reclamation/reclamation.compon
 import { DossiersComponent } from './componets/dossiers/dossiers.component';
 import { CalendrierComponent } from './componets/calendrier/calendrier.component';
 import { StatistiquesComponent } from './componets/statistiques/statistiques.component';
+import { Dashboard2Component } from './componets/Dashboards/dashboard2/dashboard2.component';
+import { NavbarComponent } from './componets/Dashboards/navbar/navbar.component';
+import { AppBarModule } from '@progress/kendo-angular-navigation';
+import { IconModule } from '@progress/kendo-angular-icons';
+import { PopupModule } from '@progress/kendo-angular-popup';
 
 
 
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     AppComponent,
     LoginComponent,
@@ -36,6 +42,8 @@ import { StatistiquesComponent } from './componets/statistiques/statistiques.com
     DossiersComponent,
     CalendrierComponent,
     StatistiquesComponent,
+    Dashboard2Component,
+    NavbarComponent,
  
     
   ],
@@ -60,6 +68,10 @@ import { StatistiquesComponent } from './componets/statistiques/statistiques.com
     
     ButtonsModule,
     ScrollViewModule,
+    AppBarModule,
+    IconModule,
+    PopupModule,
+    
    
     
 

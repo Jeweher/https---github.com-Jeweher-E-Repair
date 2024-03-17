@@ -7,6 +7,8 @@ import { SideNavComponent } from './componets/Dashboards/side-nav/side-nav/side-
 import { AccueilComponent } from './componets/accueil/accueil.component';
 import { CalendrierComponent } from './componets/calendrier/calendrier.component';
 import { DossiersComponent } from './componets/dossiers/dossiers.component';
+import { Dashboard2Component } from './componets/Dashboards/dashboard2/dashboard2.component';
+import { NavbarComponent } from './componets/Dashboards/navbar/navbar.component';
 
 
 const routes: Routes = [
@@ -20,7 +22,8 @@ const routes: Routes = [
   { path: 'side-nav', component: SideNavComponent},
   { path: 'side-nav', component: SideNavComponent},
   { path: 'side-nav', component: SideNavComponent},
-
+  { path: 'dashboard2', component: Dashboard2Component},
+  { path: 'navbar', component: NavbarComponent},
 ];
 
 @NgModule({
