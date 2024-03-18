@@ -1,14 +1,15 @@
-.outer{
-padding-bottom: 200px;
-background:url('image/backround.jpg') no-repeat ;
+.outer {
+    padding-bottom: 200px;
+    background: url('image/backround.jpg') no-repeat;
 
 }
 
-.panel-heading{
+.panel-heading {
     text-align: center;
     margin-bottom: 10px;
 }
-.container  {
+
+.container {
     display: block;
     text-align: center;
     font-size: 15px;
@@ -20,22 +21,25 @@ background:url('image/backround.jpg') no-repeat ;
     gap: 15px;
     margin-top: 5px;
 }
-#forget{
+
+#forget {
     min-width: 100px;
     margin-left: auto;
     text-decoration: none;
     cursor: pointer;
 }
 
-a:hover{
+a:hover {
     text-decoration: none;
 }
 
-.form-inline label{
+.form-inline label {
     padding-left: 10px;
     margin: 0;
     cursor: pointer;
+    border: 1px solid #070645;
 }
+
 .my-custom-button {
     margin-top: 20px;
     border-radius: 15px;
@@ -52,48 +56,52 @@ a:hover{
     transition: all 0.2s ease-in-out;
     transform: scale(0.95);
     box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
-  }
-  
+}
 
-  .form-group-role {
-    
-    
-        font-size: 1rem;
-        font-weight: bold;
-        color: #258794; /* Orange color */
-        text-align: center;
-        padding: 0.25rem 0;
-        border-bottom: 1px solid #57e4e0;
-        margin-bottom: 1rem;
-        border-radius: 5px;
-  }
-  .radio-group {
-    
-   
-  }
-    
-  
-  
-  /* .form-group-role label {
-    margin-right: 1rem;
-  } */
-  
-  .k-form-legend {
+
+.form-group-role {
+
+
     font-size: 1rem;
     font-weight: bold;
-    color: #120d5b; /* Orange color */
+    color: #258794;
+    /* Orange color */
+    text-align: center;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #57e4e0;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.radio-group {}
+
+
+
+/* .form-group-role label {
+    margin-right: 1rem;
+  } */
+
+.k-form-legend {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #120d5b;
+    /* Orange color */
     text-align: center;
     padding: 0.25rem 0;
     border-bottom: 1px solid #ccc;
     margin-bottom: 1rem;
-  }
+
+}
+
 .panel {
     min-height: 380px;
-    box-shadow: 20px  20px 80px rgb(218, 218, 218) ;
+    box-shadow: 20px 20px 80px rgb(218, 218, 218);
     border-radius: 12px;
     margin-top: 100px;
+
 }
-.input-field{
+
+.input-field {
     border-radius: 5px;
     padding: 5px;
     display: flex;
@@ -101,19 +109,21 @@ a:hover{
     cursor: pointer;
     border: 1px solid #ddd;
     color: #4343FF;
+    border: 1px solid #070645;
 }
 
-.input-field.error{
+.input-field.error {
     border: 1px solid red;
     color: red;
 }
 
-input[type = 'text'],
-input[type= 'password' ]{
+input[type='text'],
+input[type='password'] {
     border: none;
     outline: none;
     box-shadow: none;
     width: 80%;
+    border: 1px solid #070645;
 }
 
 .fa-eye-slash.btn {
@@ -129,49 +139,47 @@ img {
     border-radius: 50%;
     position: relative;
 }
+
 label {
     font-weight: bold;
     display: block;
     margin-bottom: 0.5rem;
-  }
-  input[type="date"] {
+
+}
+
+/* input[type="date"] {
     width: 80%;
     padding: 0.5rem;
     background: none;
     border: none;
     appearance: none;
     font-size: 1.1rem;
-  }
+  } */
 
-  
-  .food-demo {
+
+.food-demo {
     margin: 1em 0;
 }
 
 .k-card {
-    border: 1px solid #ccc;
+    border: 1px solid #070645;
     padding: 1em;
 }
 
 
 
 
+.kendo-label-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 6px;
+}
 
+.kendo-label-container {
+    margin-right: 10px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.k-textbox.k-input {
+    border: 1px solid #070645;
+}

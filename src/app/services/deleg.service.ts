@@ -20,8 +20,8 @@ export class delegService {
        return { headers: headers }; }
     
     
-       GetDelegationByGouvID(GouvenoratId: string) {
-        return this._http.get<any>(`${this.Url}/api/delegation/ ${GouvenoratId}`, this.prepareHeader()).pipe(
+       GetDelegationByGouvID(id: string) {
+        return this._http.get<any>(`${this.Url}/api/delegation/ ${id}`, this.prepareHeader()).pipe(
           map(res => res as any)
         );
 }

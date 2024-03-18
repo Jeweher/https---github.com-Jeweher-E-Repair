@@ -19,43 +19,66 @@ import { DelegationModel } from 'src/app/models/delegation-model';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
-
-
-  @ViewChild('password')
-  public textbox!: TextBoxComponent;
-  public CompList: Array<{ id: string; nom: string }> = [];
-  title = 'dropdownlist-tutorial';
-  public isRequired = true;
-  public governorates: GouvernoratModel[] = [];
-  public delegations: DelegationModel[] = [];
-
-  public selectedGovernorate: string | null = null;
-  public filteredDelegations: DelegationModel[] = [];
-
-  public onGovernorateChange(value: any): void {
-    this.selectedGovernorate = value;
-    this.filteredDelegations = this.delegations.filter(
-      (delegation) => delegation.gouvId === value
-    );
-  }
-  public onDelegationChange(value: any): void {
-    const delegation = this.delegations.find((d) => d.gouvId === value);
-    if (delegation) {
-      this.selectedGovernorate = delegation.gouvId;
-    }
-  }
-
-
-
-
-
   constructor(private userService: UserService,
     private delegService: delegService,
     private compeService: CompeService,
     private router: Router,
     private GouvService: GouvService) { }
-  ngOnInit(): void { }
+    public delegations: DelegationModel[] = [];
+    public governorates: GouvernoratModel[] = [];
+  
+
+    ngOnInit(): void {
+      this.GetCompList();
+      this.GetGouvlist();
+      // this.GetDelegationByGouvID(this.selectedGovernorate);
+      
+
+     }
+     GetCompList(){
+      this.compeService.GetCompList().subscribe(data=>this.CompList=data)
+     }
+
+     GetGouvlist(){
+      this. GouvService.GetGouvlist().subscribe(data=>this.governorates=data)
+     }
+
+    //  GetDelegationByGouvID(gouvenoratId: string){
+    //   this. delegService.GetDelegationByGouvID(gouvenoratId).subscribe(data=>this.Delegations=data)
+    //  }
+
+
+
+
+ @ViewChild('password')
+  public textbox!: TextBoxComponent;
+  public CompList: Array<{ id: string; nom: string }> = [];
+  title = 'dropdownlist-tutorial';
+  public isRequired = true;
+  
+
+  // public selectedGovernorate: string | null = null;
+  // public Delegations:[] = [];
+
+  public onGovernorateChange(value: any): void {
+    var selectedGovernorate = value.id;
+    if(selectedGovernorate.id){
+      this. delegService.GetDelegationByGouvID(selectedGovernorate.id).subscribe(data=>this.delegations=data)
+      
+    }
+     
+    
+   
+  }
+  // public onDelegationChange(value: any): void {
+  //   const delegation = this.delegations.find((d) => d.gouvId === value);
+  //   if (delegation) {
+  //     this.selectedGovernorate = delegation.gouvId;
+  //   }
+  // }
+
+    
+ 
 
 
   public ngAfterViewInit(): void {
@@ -76,15 +99,20 @@ export class SignupComponent implements OnInit {
     phone: new FormControl('', [Validators.required,]),
     //  Validators.pattern('^\d{8}$')
 
-    // 'role': new FormControl('', Validators.required),
+    
     clientAddress: new FormControl('', Validators.required),
     clientStreet: new FormControl('', Validators.required),
     secondPhoneNumber: new FormControl('', Validators.required),
     competence: new FormControl('', Validators.required),
-    // gender: new FormControl('', Validators.required),
+
     role: new FormControl(),
-    selectedItem2: new FormControl(),
-    selectedItem1: new FormControl()
+    Delegations: new FormControl(),
+    selectedItem1: new FormControl(),
+
+    phone2: new FormControl(''),
+    streetNumber: new FormControl(''),
+    houseNumber: new FormControl(''),
+   
 
   });
 
