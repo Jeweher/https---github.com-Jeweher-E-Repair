@@ -1,4 +1,4 @@
-export class UtilisateurModel {
+export class Users {
     
         id:string="";
         nom: string="";
@@ -14,7 +14,5 @@ export class UtilisateurModel {
         
     
     
-    
-    
-    
+
 }

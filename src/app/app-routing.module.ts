@@ -9,6 +9,8 @@ import { CalendrierComponent } from './componets/calendrier/calendrier.component
 import { DossiersComponent } from './componets/dossiers/dossiers.component';
 import { Dashboard2Component } from './componets/Dashboards/dashboard2/dashboard2.component';
 import { NavbarComponent } from './componets/Dashboards/navbar/navbar.component';
+import { ReclamationComponent } from './componets/reclamation/reclamation.component';
+import { StatistiquesComponent } from './componets/statistiques/statistiques.component';
 
 
 const routes: Routes = [
@@ -16,14 +18,16 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent}, 
-  { path: 'accueil', component: AccueilComponent},
-  { path: 'calendrier', component: CalendrierComponent},
-  { path: 'dossiers', component: DossiersComponent},
-  { path: 'side-nav', component: SideNavComponent},
-  { path: 'side-nav', component: SideNavComponent},
+  { path: 'Accueil', component: AccueilComponent},
+  { path: 'Calendrier', component: CalendrierComponent},
+  { path: 'Dossiers', component: DossiersComponent},
+  { path: 'Reclamation', component: ReclamationComponent},
+  { path: 'Statistiques', component: StatistiquesComponent},
   { path: 'side-nav', component: SideNavComponent},
   { path: 'dashboard2', component: Dashboard2Component},
   { path: 'navbar', component: NavbarComponent},
+  // { path: '',loadChildren:()=>import('./modules/dashboard/dashboard.module').then((m)=>m.DashboardModule),},
+ 
 ];
 
 @NgModule({

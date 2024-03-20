@@ -2,11 +2,88 @@
 <app-navbar [ngStyle]="{  width : isSideNavCollapsed ==false ? ' calc(100% - 5rem)' :'  calc(100% - 16.5625rem)',left: isSideNavCollapsed ==false ? ' 5rem' :' 16.5625rem' }"></app-navbar>
   <div class="body" [ngClass]="getBodyClass()" >
     <router-outlet>
-      <button kendoButton *ngIf="!opened" (click)="open()">Fenetre</button>
+      <div class="panel-body p-5">
+      <div class="card-container">
 
-    <kendo-window title="My Window" *ngIf="opened" (close)="close()">
-      <p style="margin: 30px; text-align: center;">The window was opened.</p>
-    </kendo-window>
+
+
+
+
+        
+        <kendo-link [routerLink]="['/Acceuil']">
+        <kendo-card width="360px">
+          <kendo-card-header class="k-hstack">
+            <span class="fa fa-bell  p-2"></span>
+            <div>
+              <h1 kendoCardTitle>Notifications</h1>
+              <p kendoCardSubtitle></p>
+            </div>
+             </kendo-card-header>
+           </kendo-card>
+        </kendo-link>
+
+        <kendo-card width="360px">
+          <kendo-card-header class="k-hstack">
+            <span class="fa fa-bell  p-2"></span>
+            <div>
+              <h1 kendoCardTitle>Notifications</h1>
+              <p kendoCardSubtitle></p>
+            </div>
+          </kendo-card-header>
+        </kendo-card>
+
+        <kendo-card width="360px">
+          <kendo-card-header class="k-hstack">
+            <span class="fa fa-bell  p-2"></span>
+            <div>
+              <h1 kendoCardTitle>Notifications</h1>
+              <p kendoCardSubtitle></p>
+            </div>
+          </kendo-card-header>
+        </kendo-card>
+      </div>
+    </div>
+    <div class="panel-body p-5">
+      <div class="card-container">
+        <kendo-card width="360px">
+          <kendo-card-header class="k-hstack">
+            <span class="fa fa-bell  p-2"></span>
+            <div>
+              <h1 kendoCardTitle>Notifications</h1>
+              <p kendoCardSubtitle></p>
+            </div>
+          </kendo-card-header>
+        </kendo-card>
+
+        <kendo-card width="360px">
+          <kendo-card-header class="k-hstack">
+            <span class="fa fa-bell  p-2"></span>
+            <div>
+              <h1 kendoCardTitle>Notifications</h1>
+              <p kendoCardSubtitle></p>
+            </div>
+          </kendo-card-header>
+        </kendo-card>
+
+        <kendo-card width="360px">
+          <kendo-card-header class="k-hstack">
+            <span class="fa fa-bell  p-2"></span>
+            <div>
+              <h1 kendoCardTitle>Notifications</h1>
+              <p kendoCardSubtitle></p>
+            </div>
+          </kendo-card-header>
+        </kendo-card>
+      </div>
+    </div>
+
+
+    
+
+      
+      
+     
+     
  
     </router-outlet>
 </div>

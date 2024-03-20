@@ -1,26 +1,26 @@
 export const navbarData =[
     {
-        routeLink : 'accueil ',
+        routeLink :'Accueil ',
         icon : 'fa fa-home',
         label :'accueil ',
         // role:'T'
     },
     {
-        routeLink : 'calendrier',
+        routeLink : 'Calendrier',
         icon : 'fa fa-calendar',
         label :'calendrier',
         // role:'C'
 
     },
     {
-        routeLink : 'dossiers',
+        routeLink : 'Dossiers',
         icon : 'fa fa-folder-open',
         label :'Dossiers',
         // role:'T'
 
     },
     {
-        routeLink : 'reclamation',
+        routeLink : 'Reclamation',
         icon : 'fa fa-bullhorn',
         label :'reclamation',
         // role:'T'

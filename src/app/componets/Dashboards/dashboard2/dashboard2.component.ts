@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SideNavToggle } from '../side-nav/side-nav/sidebarToggle';
 
+
 @Component({
   selector: 'app-dashboard2',
   templateUrl: './dashboard2.component.html',
-  styleUrls: ['./dashboard2.component.css']
+  styleUrls: ['./dashboard2.component.css'],
+ 
 })
 export class Dashboard2Component implements OnInit {
   isSideNavCollapsed = false ;
@@ -88,4 +90,8 @@ export class Dashboard2Component implements OnInit {
   public open(): void {
     this.opened = true;
 }
+
+public thumbnailSrc =
+"https://www.telerik.com/kendo-angular-ui-develop/components/layout/card/assets/rila.jpg";
+
 }

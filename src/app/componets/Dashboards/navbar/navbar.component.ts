@@ -20,8 +20,8 @@ export class NavbarComponent  implements AfterViewInit{
 
 
 
-  //public kendokaAvatar =
-    //"https://www.telerik.com/kendo-angular-ui-develop/components/navigation/appbar/assets/kendoka-angular.png";
+  public kendokaAvatar =
+    "https://www.telerik.com/kendo-angular-ui-develop/components/navigation/appbar/assets/kendoka-angular.png";
 
   public margin = { horizontal: -46, vertical: 7 };
   public show = false;
@@ -59,7 +59,7 @@ export class NavbarComponent  implements AfterViewInit{
   logout(){
     // here
     Swal.fire('Deconnexion', "Vous etes déconnectés", 'success')
-       this.router.navigate(['Login'])
+       this.router.navigate(['/Login'])
   }
   navigateToProfile() {
     this.router.navigate(['/']); // Replace '/target-component' with the actual path to your target component

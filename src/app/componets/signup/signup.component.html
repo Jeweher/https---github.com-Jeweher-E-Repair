@@ -35,50 +35,6 @@
                                         <kendo-formerror>Erreur : Age obligatoire</kendo-formerror>
 
                                     </kendo-formfield>
-
-
-                                    <kendo-formfield>
-
-                                        <kendo-label [for]="phone" text="Numéro de téléphone 1*"></kendo-label>
-                                        <kendo-textbox formControlName="phone" [clearButton]="true"
-                                            #phone></kendo-textbox>
-
-                                        <kendo-formerror> Erreur : Le numéro de téléphone doit être de 8
-                                            chiffres</kendo-formerror>
-                                    </kendo-formfield>
-
-
-                                    <kendo-formfield>
-
-                                        <kendo-label [for]="phone2" text="Numéro de téléphone 2"></kendo-label>
-                                        <kendo-textbox formControlName="phone2" [clearButton]="true"
-                                            #phone2></kendo-textbox>
-
-                                        
-                                    </kendo-formfield>
-
-
-                                    
-                                    <kendo-formfield>
-
-                                        <kendo-label [for]="streetNumber" text="Numéro de Rue "></kendo-label>
-                                        <kendo-textbox formControlName="streetNumber" [clearButton]="true"
-                                            #streetNumber></kendo-textbox>
-
-                                        
-                                    </kendo-formfield>
-
-
-                                    <kendo-formfield>
-
-                                        <kendo-label [for]="houseNumber" text="Numéro de maison"></kendo-label>
-                                        <kendo-textbox formControlName="houseNumber" [clearButton]="true"
-                                            #houseNumber></kendo-textbox>
-
-                                        
-                                    </kendo-formfield>
-
-                    
                                     <kendo-formfield>
                                         <kendo-label [for]="email" text="Email*"></kendo-label>
                                         <kendo-textbox formControlName="email" [clearButton]="true"
@@ -87,12 +43,11 @@
                                         <kendo-formerror>Erreur : Email obligatoire </kendo-formerror>
 
 
-
                                     </kendo-formfield>
 
                                     <kendo-formfield>
-                                        <kendo-label [for]="password" text="Mot De Passe*"> </kendo-label>
-                                        <kendo-textbox formControlName="password" #password required
+                                        <kendo-label [for]="Password" text="Mot De Passe*"> </kendo-label>
+                                        <kendo-textbox formControlName="motDePasee" #Password required
                                             [clearButton]="true">
                                             <ng-template kendoTextBoxSuffixTemplate>
                                                 <button kendoButton look="clear" icon="eye"
@@ -104,21 +59,41 @@
                                         <kendo-formerror>Erreur : un mot de passe obligatoire </kendo-formerror>
                                     </kendo-formfield>
 
+
+                                    <kendo-formfield>
+
+                                        <kendo-label [for]="phone" text="Numéro de téléphone 1*"></kendo-label>
+                                        <kendo-textbox formControlName="numTelephone1" [clearButton]="true"
+                                            #phone></kendo-textbox>
+
+                                        <kendo-formerror> Erreur : Le numéro de téléphone doit être de 8
+                                            chiffres</kendo-formerror>
+                                    </kendo-formfield>
+
+
+                                    <kendo-formfield>
+
+                                        <kendo-label [for]="phone2" text="Numéro de téléphone 2"></kendo-label>
+                                        <kendo-textbox formControlName="numTelephone2" [clearButton]="true"
+                                            #phone2></kendo-textbox>
+
+                                        
+                                    </kendo-formfield>
+
                                     <div class="form-group pt-4">
 
                                         <kendo-label text="Choisir Votre Gouvernorat*"></kendo-label>
-                                        <kendo-dropdownlist formControlName="selectedItem1" [data]="governorates"
-                                            [textField]="'name'" [valueField]="'id'" [filterable]="true"
+                                        <kendo-dropdownlist formControlName="Gouvernorats" [data]="governorates"
+                                            [textField]="'nom'" [valueField]="'id'" [filterable]="true"
                                             (valueChange)="onGovernorateChange($event)">
                                         </kendo-dropdownlist>
 
                                     </div>
-
-
+                                    
                                     <div class="form-group pt-4">
                                         <kendo-label text="Choisir Votre Délegation*"></kendo-label>
-                                        <kendo-dropdownlist [data]="delegations" [textField]="'name'"
-                                            [valueField]="'id'" formControlName="Delegations" [filterable]="true"
+                                        <kendo-dropdownlist [data]="delegations" [textField]="'nom'"
+                                            [valueField]="'id'" formControlName="Delegations" [filterable]="true" [disabled]="true"
                                             ></kendo-dropdownlist>
 
 
@@ -126,7 +101,27 @@
                                     </div>
 
 
+                                    
+                                    <kendo-formfield>
 
+                                        <kendo-label [for]="streetName" text="Nom de Rue "></kendo-label>
+                                        <kendo-textbox formControlName="rue" [clearButton]="true"
+                                            #streetName></kendo-textbox>
+
+                                        
+                                    </kendo-formfield>
+
+
+                                    <kendo-formfield>
+
+                                        <kendo-label [for]="houseNumber" text="Numéro de maison"></kendo-label>
+                                        <kendo-textbox formControlName="numMaison" [clearButton]="true"
+                                            #houseNumber></kendo-textbox>
+
+                                        
+                                    </kendo-formfield>
+
+                
 
                                     <div class="form-group pt-1">
                                         <div class="form-group-role">
@@ -150,6 +145,7 @@
                                             <kendo-label [for]="CompList"
                                                 text="Choisir votre Compétence*"></kendo-label>
                                             <kendo-multiselect formControlName="competence" [data]="CompList"
+                                            [textField]="'nom'" [valueField]="'id'"    
                                                 string="id" string="nom" [valuePrimitive]="true"></kendo-multiselect>
                                             <kendo-formerror>Erreur : compétence obligatoire</kendo-formerror>
                                         </kendo-formfield>
@@ -158,8 +154,7 @@
 
                                     <div class="form-group pt-4">
                                         <div class="k-form-buttons k-buttons-end">
-                                            <button kendoButton class="my-custom-button" (click)="submitForm()">se
-                                                connecter</button>
+                                            <button kendoButton class="my-custom-button"  [disabled]="form.invalid"(click)="submitForm()">S'inscrire</button>
                                             <button kendoButton class="my-custom-button"
                                                 (click)="clearForm()">Effacer</button>
                                         </div>
@@ -182,5 +177,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>
 </div>

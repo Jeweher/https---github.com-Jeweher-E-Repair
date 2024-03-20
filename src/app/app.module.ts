@@ -26,11 +26,16 @@ import { NavbarComponent } from './componets/Dashboards/navbar/navbar.component'
 import { AppBarModule } from '@progress/kendo-angular-navigation';
 import { IconModule } from '@progress/kendo-angular-icons';
 import { PopupModule } from '@progress/kendo-angular-popup';
+// import {MatCardModule} from '@angular/material/card'
+import { IconsModule } from "@progress/kendo-angular-icons";
+import { LayoutModule } from "@progress/kendo-angular-layout";
+import { ProgressBarModule} from "@progress/kendo-angular-progressbar";
+
 
 
 
 @NgModule({
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     AppComponent,
     LoginComponent,
@@ -71,6 +76,17 @@ import { PopupModule } from '@progress/kendo-angular-popup';
     AppBarModule,
     IconModule,
     PopupModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    LayoutModule,
+    IconsModule,
+    InputsModule,
+    LabelModule,
+    ButtonsModule,
+    DropDownsModule,
+    ProgressBarModule
+    
     
    
     
