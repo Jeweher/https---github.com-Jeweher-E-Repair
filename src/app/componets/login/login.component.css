@@ -88,7 +88,9 @@
     transform: scale(0.95);
     box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
   }
-  
+  .k-textbox.k-input {
+    border: 1px solid #070645;
+}
  
 
   
