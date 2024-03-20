@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent}, 
+  { path: 'navbar', component: NavbarComponent},
   { path: 'Accueil', component: AccueilComponent},
   { path: 'Calendrier', component: CalendrierComponent},
   { path: 'Dossiers', component: DossiersComponent},
@@ -25,8 +26,44 @@ const routes: Routes = [
   { path: 'Statistiques', component: StatistiquesComponent},
   { path: 'side-nav', component: SideNavComponent},
   { path: 'dashboard2', component: Dashboard2Component},
-  { path: 'navbar', component: NavbarComponent},
+
+  { path: 'dashboard2', component: Dashboard2Component, children: [
+    
+    { path: 'Accueil', component: AccueilComponent },
+    { path: 'Reclamation', component: ReclamationComponent},
+    { path: 'Calendrier', component: CalendrierComponent},
+    { path: 'Dossiers', component: DossiersComponent},
+    { path: 'Statistiques', component: StatistiquesComponent},
+  
+  ]},
+
+
+
+
+
+
+
+
+
+
   // { path: '',loadChildren:()=>import('./modules/dashboard/dashboard.module').then((m)=>m.DashboardModule),},
+  // { path: 'Dashboard2', component: Dashboard2Component },
+
+
+
+
+
+
+  
+ 
+  
+  // { path: 'dashboard2/Accueil', component: AccueilComponent}, // Ajout de la route pour 'dashboard2/Accueil'
+
+  // { path: '',loadChildren:()=>import('./modules/dashboard/dashboard.module').then((m)=>m.DashboardModule),},
+  
+  // Autres routes...
+
+
  
 ];
 
