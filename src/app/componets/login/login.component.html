@@ -1,1 +1,58 @@
-<p>login works!</p>
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-heading text-center">
+                        <h3 class="pt-3 font-weight-bold">Se Connecter</h3>
+                    </div>
+                    <div class="panel-body p-4">
+                        <form class="k-form k-form-md" [formGroup]="form" >
+                            <fieldset class="k-form-fieldset">
+                              <legend class="k-form-legend">Votre Compte</legend>
+                          
+                              <kendo-formfield>
+                                <kendo-label [for]="email" text="Email"></kendo-label>
+                                <kendo-textbox formControlName="email" [clearButton]="true" #email></kendo-textbox>
+                                
+                                <kendo-formerror >erreur : Email obligatoire </kendo-formerror>
+                                
+                                
+                                
+                              </kendo-formfield>
+                          
+                              <kendo-formfield>
+                                <kendo-label [for]="password" text="Mot De Passe"> </kendo-label>
+                                <kendo-textbox formControlName="password" #password required [clearButton]="true">
+                                    <ng-template kendoTextBoxSuffixTemplate>
+                                        <button kendoButton look="clear" icon="eye" (click)="toggleVisibility()"></button>
+                                    </ng-template>
+                                </kendo-textbox>
+        
+                                
+                                <kendo-formerror >Erreur : un mot de passe est obligatoire </kendo-formerror>
+                            </kendo-formfield>
+                            <div class="form-group pt-4">
+                              <div class="k-form-buttons k-buttons-end">
+                                <button kendoButton class="my-custom-button" (click)="submitForm()">se connecter</button>
+                                <button kendoButton class="my-custom-button"  (click)="clearForm()">Effacer</button>
+                              </div>
+                              <div class="text-center pt-1 text-muted">Je n'ai pas de compte? <a id="forget" routerLink="/signup">'inscrire </a> </div>
+                            </div>
+                            </fieldset>
+                          </form>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
