@@ -25,9 +25,10 @@ const routes: Routes = [
   { path: 'Reclamation', component: ReclamationComponent},
   { path: 'Statistiques', component: StatistiquesComponent},
   { path: 'side-nav', component: SideNavComponent},
-  { path: 'dashboard2', component: Dashboard2Component},
+  // { path: 'dashboard2', component: Dashboard2Component},
 
   { path: 'dashboard2', component: Dashboard2Component, children: [
+    { path: '', redirectTo: 'Accueil', pathMatch: 'full' },
     
     { path: 'Accueil', component: AccueilComponent },
     { path: 'Reclamation', component: ReclamationComponent},

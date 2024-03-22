@@ -1,0 +1,40 @@
+.example {
+    display: table;
+    margin: auto;
+    width: 550px; /* Augmenter la largeur */
+}
+
+.k-stepper {
+    align-self: center;
+    font-size: 20px; /* Augmenter la taille du texte */
+    color: #0c2f48; /* Changer la couleur du texte */
+}
+
+.k-step {
+    pointer-events: none;
+}
+
+.k-button.prev {
+    margin-right: 16px;
+}
+
+.k-form-separator {
+    margin-top: 40px;
+}
+
+.k-buttons-end {
+    justify-content: space-between;
+    align-content: center;
+}
+
+.page {
+    align-self: center;
+}
+
+
+/* .outer {
+    background-color: rgb(176, 176, 207);
+} */
+
+
+

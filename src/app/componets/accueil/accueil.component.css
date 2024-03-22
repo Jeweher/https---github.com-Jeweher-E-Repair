@@ -2,14 +2,36 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+    
   }
   
   .card-container .kendo-card {
     flex: 1 1 160px;
     margin-right: 10px;
     color: #722121;
+    display: grid;
+    grid: 50px;
   }
   
   .card-container .kendo-card:last-child {
     margin-right: 0;
   }
+
+
+
+  /* Styles pour les cartes avec la classe .blue-card */
+.blue-card {
+  background-color: #0c2f48;
+}
+
+/* Styles pour les cartes avec la classe .shadow-card */
+.shadow-card {
+  box-shadow: 0 9px 8px 0 rgba(0,0,0,0.2); /* Ajoute une ombre */
+}
+
+/* .panel-body{
+  
+    background-color: rgb(211, 233, 241);
+
+} */
+

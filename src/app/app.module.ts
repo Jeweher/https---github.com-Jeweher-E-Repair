@@ -30,6 +30,11 @@ import { PopupModule } from '@progress/kendo-angular-popup';
 import { IconsModule } from "@progress/kendo-angular-icons";
 import { LayoutModule } from "@progress/kendo-angular-layout";
 import { ProgressBarModule} from "@progress/kendo-angular-progressbar";
+import { CategorieComponent } from './componets/reclamation/categorie/categorie.component';
+import { InfoGeneraleComponent } from './componets/reclamation/info-generale/info-generale.component';
+import { DetailDommageComponent } from './componets/reclamation/detail-dommage/detail-dommage.component';
+import { ChoixReparateurComponent } from './componets/reclamation/choix-reparateur/choix-reparateur.component';
+import { SommaireComponent } from './componets/reclamation/sommaire/sommaire.component';
 
 
 
@@ -49,6 +54,11 @@ import { ProgressBarModule} from "@progress/kendo-angular-progressbar";
     StatistiquesComponent,
     Dashboard2Component,
     NavbarComponent,
+    CategorieComponent,
+    InfoGeneraleComponent,
+    DetailDommageComponent,
+    ChoixReparateurComponent,
+    SommaireComponent,
  
     
   ],
