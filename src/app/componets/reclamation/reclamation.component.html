@@ -1,66 +1,51 @@
 <div class="outer">
     <div class="centered-content">
-<div style="display: grid; grid-template-columns: 150px auto">
-    <kendo-stepper
-      [style.width.px]="150"
-      [steps]="steps"
-      stepType="full"
-      orientation="vertical"
-      [(currentStep)]="currentStep"
-    >
-    </kendo-stepper>
+        <div style="display: grid; grid-template-columns: 200px auto">
+            <kendo-stepper [steps]="steps" stepType="full" orientation="vertical"
+                [(currentStep)]="currentStep" class="custom-stepper">
+            </kendo-stepper>
 
-    <form class="k-form" [formGroup]="form">
-        <!-- Étape 1: Catégorie -->
-        <app-categorie *ngIf="currentStep === 0"></app-categorie>
-        
-        <!-- Étape 2: Choix du réparateur -->
-        <app-choix-reparateur *ngIf="currentStep === 1"></app-choix-reparateur>
-        
-        <!-- Étape 3: Détail du dommage -->
-        <app-detail-dommage *ngIf="currentStep === 2"></app-detail-dommage>
-        
-        <!-- Étape 4: Information générale -->
-        <app-info-generale *ngIf="currentStep === 3"></app-info-generale>
-        
-        <!-- Étape 5: Sommaire -->
-        <app-sommaire *ngIf="currentStep === 4"></app-sommaire>
-        
-        <!-- Séparateur -->
-        <span class="k-form-separator"></span>
-        
-        <!-- Boutons de navigation -->
-        <div class="k-form-buttons k-buttons-end">
-            <span class="page">Step {{ currentStep + 1 }} of 5</span>
-            <div>
-                <!-- Bouton précédent -->
-                <button
-                    class="k-button prev"
-                    *ngIf="currentStep !== 0"
-                    (click)="prev()"
-                >
-                    Previous
-                </button>
-                <!-- Bouton suivant -->
-                <button
-                    class="k-button k-primary"
-                    (click)="next()"
-                    *ngIf="currentStep !== 4"
-                >
-                    Next
-                </button>
-                <!-- Bouton soumettre -->
-                <button
-                    class="k-button k-primary"
-                    (click)="submit()"
-                    *ngIf="currentStep === 4"
-                >
-                    Submit
-                </button>
-            </div>
+            <form class="k-form" [formGroup]="form">
+                <!-- Étape 1: Catégorie -->
+                <app-categorie *ngIf="currentStep === 0"></app-categorie>
+
+                <!-- Étape 2: Choix du réparateur -->
+                
+                <app-info-generale *ngIf="currentStep === 1"></app-info-generale>
+
+
+                <!-- Étape 3: Détail du dommage -->
+                <app-detail-dommage *ngIf="currentStep === 2"></app-detail-dommage>
+
+                <!-- Étape 4: Information générale -->
+                <app-choix-reparateur *ngIf="currentStep === 3"></app-choix-reparateur>
+                
+                <!-- Étape 5: Sommaire -->
+                <app-sommaire *ngIf="currentStep === 4"></app-sommaire>
+
+                <!-- Séparateur -->
+                <span class="k-form-separator"></span>
+
+                <!-- Boutons de navigation -->
+                <div class="k-form-buttons k-buttons-end">
+                    <span class="page">Etape {{ currentStep + 1 }} de 5</span>
+                    <div>
+                        <!-- Bouton précédent -->
+                        <div class="button-container">
+                        <button class="k-button prev" *ngIf="currentStep !== 0" (click)="prev()">
+                            Précédent
+                        </button>
+                        <!-- Bouton suivant -->
+                        <button class="k-button k-primary1" (click)="next()" *ngIf="currentStep !== 4">
+                            Suivant
+                        </button>
+                        <!-- Bouton soumettre -->
+                        <button class="k-button k-primary" (click)="submit()" *ngIf="currentStep === 4">
+                            Soumettre
+                        </button>
+                    </div>
+                    </div>
+                </div>
+            </form>
         </div>
-    </form>
-</div>
-</div>
-
-
+    </div>

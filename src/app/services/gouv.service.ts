@@ -21,7 +21,7 @@ export class GouvService {
     
     
    GetGouvlist(){
-    return this._http.get<any[]>(`${this.Url}/api/gouvernorat/`, this.prepareHeader()).pipe(
+    return this._http.get<any[]>(`${this.Url}/api/gouvernorat`, this.prepareHeader()).pipe(
       map(res => res as any[])
     );
   }

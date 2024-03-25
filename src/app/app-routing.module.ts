@@ -11,6 +11,7 @@ import { Dashboard2Component } from './componets/Dashboards/dashboard2/dashboard
 import { NavbarComponent } from './componets/Dashboards/navbar/navbar.component';
 import { ReclamationComponent } from './componets/reclamation/reclamation.component';
 import { StatistiquesComponent } from './componets/statistiques/statistiques.component';
+import { InfoGeneraleComponent } from './componets/reclamation/info-generale/info-generale.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,8 @@ const routes: Routes = [
   { path: 'Statistiques', component: StatistiquesComponent},
   { path: 'side-nav', component: SideNavComponent},
   // { path: 'dashboard2', component: Dashboard2Component},
+  { path: 'InfoGenerale', component: InfoGeneraleComponent},
+
 
   { path: 'dashboard2', component: Dashboard2Component, children: [
     { path: '', redirectTo: 'Accueil', pathMatch: 'full' },

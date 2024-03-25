@@ -46,17 +46,15 @@
                                     </kendo-formfield>
 
                                     <kendo-formfield>
-                                        <kendo-label [for]="Password" text="Mot De Passe*"> </kendo-label>
-                                        <kendo-textbox formControlName="motDePasee" #Password required
-                                            [clearButton]="true">
+                                        <kendo-label [for]="password" text="Mot De Passe"> </kendo-label>
+                                        <kendo-textbox formControlName="password" #password required [clearButton]="true">
                                             <ng-template kendoTextBoxSuffixTemplate>
-                                                <button kendoButton look="clear" icon="eye"
-                                                    (click)="toggleVisibility()"></button>
+                                                <button kendoButton look="clear" icon="eye" (click)="toggleVisibility()"></button>
                                             </ng-template>
                                         </kendo-textbox>
-
-
-                                        <kendo-formerror>Erreur : un mot de passe obligatoire </kendo-formerror>
+                
+                                        
+                                        <kendo-formerror >Erreur : un mot de passe est obligatoire </kendo-formerror>
                                     </kendo-formfield>
 
 

@@ -1,0 +1,149 @@
+.master-container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 30px;
+    margin-top: 60px;
+    
+    justify-content: center; 
+    align-items: center; 
+   
+  }
+  
+  
+  .card {
+    width: 400px;
+    background: #ffffff;
+ 
+    box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    margin-top: 10px;
+    border-bottom: 1px solid rgb(177, 205, 210);
+    font-weight: 700;
+    font-size: 11px;
+    color: #000000;
+  }
+  
+  /* cart */
+  .cart {
+    border-radius: 19px 19px 7px 7px;
+  }
+  
+
+  
+ 
+  
+
+  
+  
+  
+  
+
+  
+  /* coupons */
+  .coupons {
+    border-radius: 7px;
+  }
+  
+  .coupons form {
+    display: grid;
+    grid-template-columns: 1fr 80px;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .input_field {
+    width:  370px;
+    height: 36px;
+    padding: 0 0 0 12px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgb(177, 205, 210);
+    filter: drop-shadow(0px 1px 0px #efefef)
+      drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+  }
+  
+  .input_field:focus {
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 0px 2px #71b9d1;
+    background-color: transparent;
+  }
+
+
+
+  
+ 
+  /* Style for the tooltip container */
+.tooltip-container {
+    --background-light: #3a96aa; /* Red */
+    --background-dark: #000000; /* Black */
+    --text-color-light: #ffffff;
+    --text-color-dark: #ffffff;
+    --bubble-size: 12px;
+    --glow-color: rgba(255, 255, 255, 0.5); /* Brighter glow color */
+  
+    position: relative;
+    background: var(--background-light);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 17px;
+    padding: 0.7em 1.8em;
+    color: var(--text-color-light);
+    border-radius: 8px; /* Rounded edges */
+  }
+  
+  /* Style for the bubble tooltip */
+  .tooltip {
+    position: absolute;
+    top: -100%; /* Initially hidden above the container */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.6em 1em;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s;
+    border-radius: var(--bubble-size);
+    background: var(--background-light);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Triangle arrow for the bubble tooltip */
+  .tooltip::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    border-style: solid;
+    border-width: 8px 8px 0;
+    border-color: var(--background-light) transparent transparent;
+  }
+  
+  /* Tooltip appearance on hover */
+  .tooltip-container:hover {
+    background: var(--background-dark);
+    color: var(--text-color-dark);
+    box-shadow: 0 0 20px var(--glow-color); /* Brighter glow effect */
+  }
+  
+  .tooltip-container:hover .tooltip {
+    top: -120%; /* Adjusted position for the bubble tooltip */
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+ 
+  
+
+ 
+  

@@ -11,17 +11,18 @@ export const navbarData = [
         label: 'reclamation',
         // role:'T'
     },
-    {
-        routeLink: 'Calendrier',
-        icon: 'fa fa-calendar',
-        label: 'calendrier',
-        // role:'C'
-    },
+    
     {
         routeLink: 'Dossiers',
         icon: 'fa fa-folder-open',
         label: 'Dossiers',
         // role:'T'
+    },
+    {
+        routeLink: 'Calendrier',
+        icon: 'fa fa-calendar',
+        label: 'calendrier',
+        // role:'C'
     },
     {
         routeLink: 'Statistiques',

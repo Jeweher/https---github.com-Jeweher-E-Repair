@@ -1,7 +1,7 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ElementRef,ViewChild } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { StepperComponent } from "@progress/kendo-angular-layout";
-import { cartIcon, lockIcon, userIcon } from '@progress/kendo-svg-icons';
+import { alignJustifyIcon, cartIcon, categorizeIcon, fileWrenchIcon, infoSolidIcon, lockIcon, userIcon } from '@progress/kendo-svg-icons';
 
 @Component({
   selector: 'app-reclamation',
@@ -11,14 +11,17 @@ import { cartIcon, lockIcon, userIcon } from '@progress/kendo-svg-icons';
 export class ReclamationComponent {
   @ViewChild("stepper", { static: true })
   public stepper!: StepperComponent;
+  
 
   public steps = [
-    { label: "Étape 1", isValid: this.isStepValid.bind(this), validate: this.shouldValidate.bind(this), svgIcon: lockIcon },
-    { label: "Étape 2", isValid: this.isStepValid.bind(this), validate: this.shouldValidate.bind(this), svgIcon: userIcon },
-    { label: "Étape 3", isValid: this.isStepValid.bind(this), validate: this.shouldValidate.bind(this), svgIcon: lockIcon },
-    { label: "Étape 4", isValid: this.isStepValid.bind(this), validate: this.shouldValidate.bind(this), svgIcon: userIcon },
-    { label: "Étape 5", isValid: this.isStepValid.bind(this), validate: this.shouldValidate.bind(this), svgIcon: cartIcon }
+    { label: "Etape 1", isValid: this.isStepValid.bind(this), validate: this.shouldValidate.bind(this), svgIcon: categorizeIcon },
+    { label: "Etape 2", isValid: this.isStepValid.bind(this), validate: this.shouldValidate.bind(this), svgIcon: infoSolidIcon },
+    { label: "Etape 3", isValid: this.isStepValid.bind(this), validate: this.shouldValidate.bind(this), svgIcon: lockIcon },
+    { label: "Etape 4", isValid: this.isStepValid.bind(this), validate: this.shouldValidate.bind(this), svgIcon:fileWrenchIcon },
+    { label: "Etape 5", isValid: this.isStepValid.bind(this), validate: this.shouldValidate.bind(this), svgIcon:alignJustifyIcon }
   ];
+
+
 
   public currentStep = 0;
 
@@ -35,10 +38,6 @@ export class ReclamationComponent {
     return group ? group.valid : false;
   }
 
-  private shouldValidate(index: number): boolean {
-    const group = this.getGroupAt(index);
-    return group ? (group.touched && this.currentStep >= index) : false;
-  }
 
  
 
@@ -55,6 +54,11 @@ export class ReclamationComponent {
       this.stepper.validateSteps();
     }
   }
+  private shouldValidate(index: number): boolean {
+    const group = this.getGroupAt(index);
+    return group ? (group.touched && this.currentStep >= index) : false;
+  }
+
   
   public submit(): void {
     const currentGroup = this.currentGroup;

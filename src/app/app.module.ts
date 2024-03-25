@@ -35,6 +35,9 @@ import { InfoGeneraleComponent } from './componets/reclamation/info-generale/inf
 import { DetailDommageComponent } from './componets/reclamation/detail-dommage/detail-dommage.component';
 import { ChoixReparateurComponent } from './componets/reclamation/choix-reparateur/choix-reparateur.component';
 import { SommaireComponent } from './componets/reclamation/sommaire/sommaire.component';
+import { DialogsModule } from '@progress/kendo-angular-dialog';
+import { SchedulerModule } from '@progress/kendo-angular-scheduler';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -95,7 +98,10 @@ import { SommaireComponent } from './componets/reclamation/sommaire/sommaire.com
     LabelModule,
     ButtonsModule,
     DropDownsModule,
-    ProgressBarModule
+    ProgressBarModule,
+    DialogsModule,
+    SchedulerModule,
+    CommonModule,
     
     
    

@@ -1,14 +1,12 @@
-/* Variables */
-/* :host {
-  display: flex;
-} */
-
 .card-wrap {
   margin: 10px;
   transform: perspective(800px);
   transform-style: preserve-3d;
   cursor: pointer;
   width: 240px;
+}
+.panel-body{
+  margin-top: 70px;
 }
 
 .card-wrap:hover .card-info {
@@ -42,12 +40,12 @@
 
 .card {
   flex: 0 0 240px;
-  width: 240px;
-  height: 320px;
+  width: 200px;
+  height: 290px;
   background-color: #c8e4ea;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: rgba(66, 103, 133, 0.66) 0 30px 30px 0, inset rgb(22, 15, 103) 0 0 0 5px, inset rgba(113, 113, 196, 0.5) 0 0 0 6px;
+  box-shadow: rgba(66, 103, 133, 0.66) 0 30px 30px 0, linear-gradient(#212121, #212121), inset rgba(113, 113, 196, 0.5) 0 0 0 6px;
   transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
@@ -62,103 +60,174 @@
 
 .card-bg .icon-placeholder {
   max-width: 80%;
+  max-height: 50%;
   left: 10%;
+  top: 35%;
   display: flex;
   align-self: center;
   justify-self: center;
   align-items: center;
   vertical-align: middle;
   position: absolute;
-  
 }
-.icon-placeholder {
-    font-size: 4em; /* Définir la taille de l'icône */
-    display: flex;
-  align-items: flex-start;
-  /* justify-content: center; */
-  }
-  
 
-  
+.icon-placeholder {
+  font-size: 7em;
+  display: flex;
+  align-items: flex-start;
+}
 
 .card-bg .icon-placeholder i {
   object-fit: cover;
   width: 100%;
-  object-fit: cover; /* Assure que l'image couvre entièrement le conteneur */
-  width: 100%; /* La largeur de l'image est de 100% de la largeur du conteneur */
-  height: 100%; /* La hauteur de l'image est de 100% de la hauteur du conteneur */
+  height: 100%;
   color:rgb(22, 15, 103)
 }
 
-
-
-/* .card-container {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    
-  }
-  
-  .card-container  {
-    flex: 1 1 160px;
-    margin-right: 10px;
-    color: #722121;
-    display: grid;
-    grid: 50px;
-  }
-  
-  .card-container  {
-    margin-right: 0;
-  } */
-
-/* .card-container{
-    display: grid; 
-    grid-gap: 50px;
+.card-bg .icon-placeholder .a1 {
+  border-radius: 20%;
+  width: 200px;
+  height: 200px;
+  background-image: url('src/assets/images1/plombier.jpg');
+  background-size:100% 100%;
 }
-  */
+
+.card-bg .icon-placeholder .a2 {
+  border-radius: 20%;
+  width: 200px;
+  height: 200px;
+  background-image: url('src/assets/images1/climatiseur.png');
+  background-size:100% 100%;
+}
+
+.card-bg .icon-placeholder .a3 {
+  border-radius: 20%;
+  width: 200px;
+  height: 200px;
+  background-image: url('src/assets/images1/service.png');
+  background-size:100% 100%;
+}
+
+.card-bg .icon-placeholder .a4 {
+  border-radius: 20%;
+  width: 200px;
+  height: 200px;
+  background-image: url('src/assets/images1/bureautique.png');
+  background-size:100% 100%;
+}
+
+.card-bg .icon-placeholder .a5 {
+  border-radius: 20%;
+  width: 200px;
+  height: 200px;
+  background-image: url('src/assets/images1/ELECTRICITE.png');
+  background-size:100% 100%;
+}
+
+.card-bg .icon-placeholder .a6 {
+  border-radius: 20%;
+  width: 200px;
+  height: 200px;
+  background-image: url('src/assets/images1/NEJERA.jpg');
+  background-size:100% 100%;
+}
+
+.card-bg .icon-placeholder .a7 {
+  border-radius: 20%;
+  width: 200px;
+  height: 200px;
+  background-image: url('src/assets/images1/jenen.png');
+  background-size:100% 100%;
+}
+
+.card-bg .icon-placeholder .a8 {
+  border-radius: 20%;
+  width: 200px;
+  height: 200px;
+  background-image: url('src/assets/images1/securite1.png');
+  background-size:100% 100%;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-bg {
+  text-align: center;
+}
 
 
-
-
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 50px;
-  }
+  /* Style for the tooltip container */
+  .tooltip-container {
+    --background-light: #3a96aa; 
+    --background-dark: #000000; /* Black */
+    --text-color-light: #ffffff;
+    --text-color-dark: #ffffff;
+    --bubble-size: 12px;
+    --glow-color: rgba(255, 255, 255, 0.5); /* Brighter glow color */
   
-  .card-wrap {
-    margin: 10px;
-    transform: perspective(800px);
-    transform-style: preserve-3d;
+    position: relative;
+    background: var(--background-light);
     cursor: pointer;
+    transition: all 0.2s;
+    font-size: 17px;
+    padding: 0.7em 1.8em;
+    color: var(--text-color-light);
+    border-radius: 8px; /* Rounded edges */
   }
   
-  .card {
-    display: grid;
-  }
-  
-  .card-bg {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95), opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-    pointer-events: none;
-    vertical-align: middle;
-  }
-  
-  /* .card-bg .image-placeholder {
-    max-width: 80%;
-    left: 10%;
-    display: flex;
-    align-self: center;
-    justify-self: center;
-    align-items: center;
-    vertical-align: middle;
+  /* Style for the bubble tooltip */
+  .tooltip {
     position: absolute;
+    top: -100%; /* Initially hidden above the container */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.6em 1em;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s;
+    border-radius: var(--bubble-size);
+    background: var(--background-light);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .card-bg .image-placeholder img {
-    object-fit: cover;
-    width: 100%;
+  /* Triangle arrow for the bubble tooltip */
+  .tooltip::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    border-style: solid;
+    border-width: 8px 8px 0;
+    border-color: var(--background-light) transparent transparent;
   }
-   */
+  
+  /* Tooltip appearance on hover */
+  .tooltip-container:hover {
+    background: var(--background-dark);
+    color: var(--text-color-dark);
+    box-shadow: 0 0 20px var(--glow-color); /* Brighter glow effect */
+  }
+  
+  .tooltip-container:hover .tooltip {
+    top: -120%; /* Adjusted position for the bubble tooltip */
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+ 
+  
+
+ 
+  

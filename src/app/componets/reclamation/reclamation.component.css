@@ -6,17 +6,84 @@
 
 .k-stepper {
     align-self: center;
-    font-size: 20px; /* Augmenter la taille du texte */
+    font-size: 30px; /* Augmenter la taille du texte */
     color: #0c2f48; /* Changer la couleur du texte */
+  
 }
 
 .k-step {
     pointer-events: none;
 }
 
-.k-button.prev {
+.k-button.prev  {
     margin-right: 16px;
+
+
+    margin-top: 20px;
+    border-radius: 15px;
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+    color: white;
+    padding-block: 10px;
+    margin: 0px auto;
+    border-radius: 20px;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    transform: scale(0.95);
+    padding: 10px 40px;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
 }
+
+
+.k-button.k-primary1
+{
+    margin-top: 20px;
+    border-radius: 15px;
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+    color: white;
+    padding-block: 10px;
+    margin: 0px auto;
+    border-radius: 20px;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    transform: scale(0.95);
+    padding: 10px 40px;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+}
+
+.k-button.k-primary
+{
+    margin-top: 20px;
+    border-radius: 15px;
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    background: linear-gradient(45deg, rgb(11, 45, 66) 0%, rgb(18, 177, 209) 100%);
+    color: white;
+    padding-block: 10px;
+    margin: 0px auto;
+    border-radius: 20px;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    transform: scale(0.95);
+    padding: 10px 40px;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
 
 .k-form-separator {
     margin-top: 40px;
@@ -25,6 +92,9 @@
 .k-buttons-end {
     justify-content: space-between;
     align-content: center;
+
+
+    
 }
 
 .page {
@@ -36,5 +106,8 @@
     background-color: rgb(176, 176, 207);
 } */
 
+.custom-stepper {
+    width:200px;
+}
 
 
