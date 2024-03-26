@@ -5,10 +5,10 @@ import { PlanificationModel } from "./planification-model";
 
 export class ReclamationModel {
 
-  categorie!: CategorieModel; 
-  informationGeneral! : InformationGeneralModel;
-  detailDomage!: DetailDommageModel;
-  plannification!:PlanificationModel
+  categorie: CategorieModel[]=[]; 
+  informationGeneral : InformationGeneralModel[]=[];
+  detailDomage: DetailDommageModel[]=[];
+  plannification:PlanificationModel []=[];
 
 }
 
