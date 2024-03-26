@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { sampleData, displayDate } from './event';
+import { SchedulerEvent } from '@progress/kendo-angular-scheduler';
 
 @Component({
   selector: 'app-calendrier',
@@ -10,9 +12,9 @@ export class CalendrierComponent  implements OnInit{
   id :any
   opened = false
   eventForm !:FormGroup
-  Events: [] =[]
+  Events: SchedulerEvent[] =[]
   public selectedDate: Date = new Date();
-  // public events: SchedulerEvent[] = sampleData;
+  public events: SchedulerEvent[] = sampleData;
   currentYear = new Date().getFullYear();
   parseAdjust = (eventDate: string): Date => {
       const date = new Date(eventDate);
