@@ -1,0 +1,107 @@
+.outer {
+    padding-bottom: 400px;
+  background: url('src/assets/images/aug_21_01.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+
+
+  padding-right:750px;
+
+}
+.example-wrapper {
+    width: 550px;
+    height: 410px;
+    box-shadow: 0px 10px 20px #ffffff29;
+    border-radius: 30px;
+    margin: auto;
+    background: #72d8f9;
+    border: 10px solid rgb(25, 28, 32);
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13.5px;
+}
+
+.wrapper {
+    height: calc(100% - 57px);
+    padding-left: 17px;
+    padding-right: 17px;
+
+   
+
+}
+
+h4 {
+    width: 100%;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 0.28px;
+    color: #000000;
+    font-weight: 400;
+    padding-bottom: 30px;
+}
+
+
+h6 {
+    font-weight: 500;
+    color: rgb(253, 253, 253);
+    margin-bottom: 25px;
+}
+
+/* profile */
+
+.avatar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.email {
+    font-weight: 600;
+    color: black;
+    text-align: center;
+    padding-top: 25px;
+}
+.container{
+    padding-top: 150px;
+    margin-left: 50px;
+  }
+  .bt{
+    width: 100%;
+    border: none;
+   margin-top: 13px;
+   background: linear-gradient(45deg, rgb(5, 18, 26) 0%, rgb(24, 66, 164) 100%);
+   color: rgb(255, 255, 255);
+   font-family: 'Roboto', sans-serif;
+   font-size: 13.5px;
+   font-weight: 600;
+   padding: 10px;
+
+  }
+
+  .bt2{
+   
+    border:solid 1px  #3899DD;
+    background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+    border-radius: 15px;
+    margin: 40px;
+     padding-left:10px ;
+     padding-right:10px ;
+     font-weight: bold;
+     color: rgb(255, 255, 255);
+    padding-block: 10px;
+   
+}
+.cancel{
+    border:solid 1px  #3899DD;
+    background: linear-gradient(45deg, rgb(30, 44, 52) 0%, rgb(18, 177, 209) 100%);
+    border-radius: 15px;
+    margin: 40px;
+     padding-left:10px ;
+     padding-right:10px ;
+     font-weight: bold;
+     color: rgb(255, 255, 255);
+    padding-block: 10px;
+
+}

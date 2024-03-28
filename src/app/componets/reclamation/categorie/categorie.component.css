@@ -167,7 +167,7 @@
 
   /* Style for the tooltip container */
   .tooltip-container {
-    --background-light: #3a96aa; 
+    --background-light: #104855; 
     --background-dark: #000000; /* Black */
     --text-color-light: #ffffff;
     --text-color-dark: #ffffff;
@@ -177,11 +177,14 @@
     position: relative;
     background: var(--background-light);
     cursor: pointer;
-    transition: all 0.2s;
+    --background-light: #104855;  
     font-size: 17px;
     padding: 0.7em 1.8em;
     color: var(--text-color-light);
     border-radius: 8px; /* Rounded edges */
+
+
+    
   }
   
   /* Style for the bubble tooltip */

@@ -59,10 +59,10 @@ export class NavbarComponent  implements AfterViewInit{
   logout(){
     // here
     Swal.fire('Deconnexion', "Vous etes déconnectés", 'success')
-       this.router.navigate(['/Login'])
+       this.router.navigate([''])
   }
   navigateToProfile() {
-    this.router.navigate(['/']); // Replace '/target-component' with the actual path to your target component
+    this.router.navigate(['/Profile']); // Replace '/target-component' with the actual path to your target component
   }
 
 }

@@ -12,6 +12,7 @@ import { NavbarComponent } from './componets/Dashboards/navbar/navbar.component'
 import { ReclamationComponent } from './componets/reclamation/reclamation.component';
 import { StatistiquesComponent } from './componets/statistiques/statistiques.component';
 import { InfoGeneraleComponent } from './componets/reclamation/info-generale/info-generale.component';
+import { DialogProfileComponent } from './componets/Dashboards/dialog-profile/dialog-profile.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: 'Statistiques', component: StatistiquesComponent},
   { path: 'side-nav', component: SideNavComponent},
   // { path: 'dashboard2', component: Dashboard2Component},
-  { path: 'InfoGenerale', component: InfoGeneraleComponent},
+  { path: 'InfoGenerale', component: InfoGeneraleComponent},   
+  { path: 'Profile', component:  DialogProfileComponent},
 
 
   { path: 'dashboard2', component: Dashboard2Component, children: [

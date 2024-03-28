@@ -38,6 +38,7 @@ import { SommaireComponent } from './componets/reclamation/sommaire/sommaire.com
 import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { SchedulerModule } from '@progress/kendo-angular-scheduler';
 import { CommonModule } from '@angular/common';
+import { DialogProfileComponent } from './componets/Dashboards/dialog-profile/dialog-profile.component';
 
 
 
@@ -62,6 +63,7 @@ import { CommonModule } from '@angular/common';
     DetailDommageComponent,
     ChoixReparateurComponent,
     SommaireComponent,
+    DialogProfileComponent,
  
     
   ],

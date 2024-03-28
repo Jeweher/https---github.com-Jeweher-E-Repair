@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit {
       Nom: new FormControl(),
       Prenom: new FormControl(),
       Age: new FormControl(null, [Validators.required, Validators.min(16), Validators.max(100)]),
-      password: new FormControl('', [Validators.required]),
+      MotDePasse: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       numTelephone1: new FormControl('', [Validators.required]),
       //  Validators.pattern('^\d{8}$')

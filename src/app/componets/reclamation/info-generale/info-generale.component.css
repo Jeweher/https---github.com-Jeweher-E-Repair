@@ -83,7 +83,7 @@
  
   /* Style for the tooltip container */
 .tooltip-container {
-    --background-light: #3a96aa; /* Red */
+  --background-light: #104855;  
     --background-dark: #000000; /* Black */
     --text-color-light: #ffffff;
     --text-color-dark: #ffffff;

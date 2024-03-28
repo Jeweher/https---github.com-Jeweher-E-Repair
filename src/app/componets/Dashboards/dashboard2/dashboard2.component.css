@@ -32,5 +32,12 @@ app-navbar{
 
 
 .body {
-    background-color: rgb(234, 240, 241);
+    /* background-color: rgb(7, 61, 70); */
+    padding-bottom: 400px;
+    background: url('src/assets/images/jj.png') no-repeat center center fixed;
+    background-size: cover;
+    /* height: 100vh; */
+    padding-bottom: 200px;
+  
+    
 }

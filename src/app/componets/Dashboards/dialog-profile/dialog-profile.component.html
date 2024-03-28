@@ -1,0 +1,102 @@
+<div class="outer">
+<div class="container">
+    <div class="example-wrapper">
+      <div class="wrapper">
+        <h4>Mon profil</h4>
+        <div class="avatar">
+          <kendo-avatar
+            [border]="true"
+            shape="circle"
+            fillMode="outline" initials="MJ"
+            width="128px"
+            height="128px"
+            style="background-color:#160f5a; color: #fffefe;font-size: 78px;"
+          ></kendo-avatar>
+          <span class="email">{{username}}</span>
+          <span class="email">{{email}}</span>
+        </div>
+      </div>
+    <table  style="width: 100%;">
+      <tr >
+        <td  style="width: 50%;"> <button  class="bt" (click)="open()"  style="border-bottom-left-radius: 30px;" >
+          <kendo-svg-icon [icon]="icons.edite" style="color:#ffffff;"></kendo-svg-icon> Modifier le mot de passe   </button> 
+    </td>
+        <td  style="width: 50%;"> <button  class="bt"   (click)="open1()"     style="border-bottom-right-radius: 30px;">
+          <kendo-svg-icon [icon]="icons.edite" style="color:#303131#303131;"></kendo-svg-icon> Modifier le nom   </button> 
+    </td>
+      </tr>
+    </table>
+    
+    </div>
+    </div>
+    <kendo-dialog title="Mettre à jour le mot de passe" *ngIf="opened" (close)="close()" [minWidth]="250" [themeColor]="'dark'"
+      style="background-color:rgba(0,0,0,0.2)" [width]="500">
+      <form [formGroup]="resetPasswordForm">
+        <div class="form-group">
+          <label for="password">Mot de Passe:</label>
+          <input type="password" class="form-control" id="password" formControlName="password" placeholder="Mot de Passe">
+          <div *ngIf="resetPasswordForm.controls['password'].invalid && (resetPasswordForm.controls['password'].dirty || resetPasswordForm.controls['password'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="resetPasswordForm.controls['password'].hasError('required')">Mot de passe Obligatoire.</div>
+            <div *ngIf="resetPasswordForm.controls['password'].hasError('minlength')">Password should be at least 8 characters long.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="confirm">Confirmez le mot de passe:</label>
+          <input type="password" class="form-control" id="confirm" formControlName="confirm" placeholder="Confirmez le mot de passe">
+          <div *ngIf="resetPasswordForm.controls['confirm'].invalid && (resetPasswordForm.controls['confirm'].dirty || resetPasswordForm.controls['confirm'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="resetPasswordForm.controls['confirm'].hasError('required')">Confirmation Obligatoire.</div>
+            <div *ngIf="resetPasswordForm.hasError('mustMatch', ['confirm'])">Les mots de passe doivent correspondre.</div>
+          </div>
+        </div>
+    
+        <kendo-dialog-actions style="border:none;margin-top: 20px;">
+          <button kendoButton (click)="close()" class="cancel">Annuler</button>
+          <button kendoButton (click)="onSubmit()" class="bt2" [disabled]="resetPasswordForm.invalid">
+            Mettre à jour
+          </button>
+        </kendo-dialog-actions>
+      </form>
+    </kendo-dialog>
+
+
+
+
+
+    <kendo-dialog title="Mettre à jour le Nom" *ngIf="opened1" (close)="close1()" [minWidth]="250" [themeColor]="'dark'"
+      style="background-color:rgba(0,0,0,0.2)" [width]="500">
+      <form [formGroup]="resetNomForm">
+        <div class="form-group">
+
+          <label for="Nom">Nom:</label>
+          <input type="Nom" class="form-control" id="Nom" formControlName="Nom" placeholder="Nom">
+          <div *ngIf="resetNomForm.controls['Nom'].invalid && (resetNomForm.controls['Nom'].dirty || resetNomForm.controls['Nom'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="resetNomForm.controls['Nom'].hasError('required')">Nom Obligatoire.</div>
+           
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="confirm">Confirmez le Nom:</label>
+          <input type="Nom" class="form-control" id="confirm" formControlName="confirm" placeholder="Confirmez le Nom">
+          <div *ngIf="resetNomForm.controls['confirm'].invalid && (resetNomForm.controls['confirm'].dirty || resetNomForm.controls['confirm'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="resetNomForm.controls['confirm'].hasError('required')">Confirmation Obligatoire.</div>
+            <div *ngIf="resetNomForm.hasError('mustMatch', ['confirm'])">Les Nom doivent correspondre.</div>
+          </div>
+        </div>
+    
+        <kendo-dialog-actions style="border:none;margin-top: 20px;">
+          <button kendoButton (click)="close1()" class="cancel">Annuler</button>
+          <button kendoButton (click)="onSubmit()" class="bt2" [disabled]="resetNomForm.invalid">
+            Mettre à jour
+          </button>
+        </kendo-dialog-actions>
+      </form>
+    </kendo-dialog>
+
+
+</div>
+    
+    

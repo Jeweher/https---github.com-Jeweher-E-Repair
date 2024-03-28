@@ -62,11 +62,11 @@ export class LoginComponent implements OnInit {
       console.log('Form Submitted', this.form.value);
       // Add your logic here to handle the form submission
   
-      const password = this.f['password']?.value;
+      const MotDePasse = this.f['MotDePasse']?.value;
       const email = this.f['email']?.value;
   
-      if (password && email) {
-        this.userService.login(password, email)
+      if (MotDePasse && email) {
+        this.userService.login(MotDePasse, email)
           .subscribe({
             next: (res) => {
               // alert(res.message)
@@ -88,7 +88,7 @@ export class LoginComponent implements OnInit {
   }
   ngOnInit()  {
     this.form = this.formBuilder.group({
-      password: new FormControl('', [Validators.required]),
+      MotDePasse: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
   });
 
